@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H Sound Classification</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 15px 0;
+            color: #555;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .instructions {
+            background-color: #f9f9f9;
+            border-left: 5px solid #2575fc;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .example-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 20px;
+        }
+        
+        .example {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f0f8ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example.ejemplo {
+            border-top: 5px solid #4CAF50;
+        }
+        
+        .example.contraejemplo {
+            border-top: 5px solid #F44336;
+        }
+        
+        .video-container {
+            width: 100%;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            background-color: rgba(255, 255, 255, 0.95);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-btn::after {
+            content: "▶";
+            font-size: 1.5rem;
+            color: #2575fc;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        button.ejemplo-btn {
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            color: white;
+        }
+        
+        button.contraejemplo-btn {
+            background: linear-gradient(90deg, #F44336, #FF9800);
+            color: white;
+        }
+        
+        button.next-btn {
+            background: linear-gradient(90deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 15px 40px;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .feedback {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background-color: #E8F5E9;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+        
+        .feedback.incorrect {
+            background-color: #FFEBEE;
+            color: #F44336;
+            border: 2px solid #F44336;
+        }
+        
+        .score-display {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #2575fc;
+        }
+        
+        .completed-message {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .completed-message h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .word-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2575fc;
+            margin: 20px 0;
+            text-align: center;
+            min-height: 60px;
+        }
+        
+        @media (max-width: 600px) {
+            .example-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            button {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>H Sound Classification</h1>
+            <p>Can you identify the correct pronunciation?</p>
+        </header>
+        
+        <div class="content">
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <p>Today we are going to work on the sound that the letter H makes in the beginning or within a word.</p>
+                <p>Consider that the H is silent in Spanish.</p>
+                <p>Example: The letter H in "Herb" makes the same sound as the letter H in Spanish.</p>
+                <p>You will watch videos with the correct (EXAMPLE) and incorrect (COUNTEREXAMPLE) pronunciation of the H sound.</p>
+                <p>You will then categorize 20 videos between examples and non-examples.</p>
+                <p><strong>You can only play the video ONCE before selecting your answer.</strong></p>
+                <p>From this point forward, the researcher will only communicate in Spanish.</p>
+            </div>
+            
+            <h2>Practice Examples</h2>
+            
+            <div class="example-container">
+                <div class="example ejemplo">
+                    <h3>EXAMPLE</h3>
+                    <p>Hacer</p>
+                    <div class="video-container">
+                        <video id="video1" controls>
+                            <source src="h/1_hacer_front_eg.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-btn" onclick="playVideo('video1')"></div>
+                    </div>
+                    <p>Correct pronunciation</p>
+                </div>
+                
+                <div class="example contraejemplo">
+                    <h3>COUNTEREXAMPLE</h3>
+                    <p>Hacer</p>
+                    <div class="video-container">
+                        <video id="video2" controls>
+                            <source src="h/1_hacer_front_neg.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-btn" onclick="playVideo('video2')"></div>
+                    </div>
+                    <p>Incorrect pronunciation</p>
+                </div>
+            </div>
+            
+            <div class="example-container">
+                <div class="example ejemplo">
+                    <h3>EXAMPLE</h3>
+                    <p>Historia</p>
+                    <div class="video-container">
+                        <video id="video3" controls>
+                            <source src="h/1_historia_front_eg.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-btn" onclick="playVideo('video3')"></div>
+                    </div>
+                    <p>Correct pronunciation</p>
+                </div>
+                
+                <div class="example contraejemplo">
+                    <h3>COUNTEREXAMPLE</h3>
+                    <p>Historia</p>
+                    <div class="video-container">
+                        <video id="video4" controls>
+                            <source src="h/1_historia_front_neg.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-btn" onclick="playVideo('video4')"></div>
+                    </div>
+                    <p>Incorrect pronunciation</p>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+            <div class="word-display" id="current-word">Ready? LET'S BEGIN</div>
+            
+            <div class="feedback correct" id="feedback-correct">
+                Correct! Excellent work!
+            </div>
+            
+            <div class="feedback incorrect" id="feedback-incorrect">
+                Incorrect. Try the next one.
+            </div>
+            
+            <div class="score-display" id="score">
+                Score: 0/20
+            </div>
+            
+            <div class="buttons">
+                <button class="ejemplo-btn" onclick="checkAnswer('ejemplo')">EXAMPLE</button>
+                <button class="contraejemplo-btn" onclick="checkAnswer('contraejemplo')">COUNTEREXAMPLE</button>
+                <button class="next-btn" onclick="nextVideo()">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Video list with relative paths and categorization
+        const videoList = [
+            { word: "Horario", type: "ejemplo", path: "h/1_horario_front_eg.mp4" },
+            { word: "Horario", type: "contraejemplo", path: "h/1_horario_front_neg.mp4" },
+            { word: "Hada", type: "ejemplo", path: "h/1_hada_front_eg.mp4" },
+            { word: "Hada", type: "contraejemplo", path: "h/1_hada_front_neg.mp4" },
+            { word: "Hoja", type: "ejemplo", path: "h/1_hoja_front_eg.mp4" },
+            { word: "Hoja", type: "contraejemplo", path: "h/1_hoja_front_neg.mp4" },
+            { word: "Hablar", type: "ejemplo", path: "h/1_hablar_front_eg.mp4" },
+            { word: "Hablar", type: "contraejemplo", path: "h/1_hablar_front_neg.mp4" },
+            { word: "Hacer", type: "ejemplo", path: "h/1_hacer_front_eg.mp4" },
+            { word: "Hacer", type: "contraejemplo", path: "h/1_hacer_front_neg.mp4" },
+            { word: "Historia", type: "ejemplo", path: "h/1_historia_front_eg.mp4" },
+            { word: "Historia", type: "contraejemplo", path: "h/1_historia_front_neg.mp4" },
+            { word: "Alcohol", type: "ejemplo", path: "h/1_alcohol_front_eg.mp4" },
+            { word: "Alcohol", type: "contraejemplo", path: "h/1_alcohol_front_neg.mp4" },
+            { word: "Adherí", type: "ejemplo", path: "h/1_adher_front_eg.mp4" },
+            { word: "Adherí", type: "contraejemplo", path: "h/1_adher_front_neg.mp4" },
+            { word: "Helado", type: "ejemplo", path: "h/1_helado_front_eg.mp4" },
+            { word: "Helado", type: "contraejemplo", path: "h/1_helado_front_neg.mp4" },
+            { word: "Hielo", type: "ejemplo", path: "h/1_hielo_front_eg.mp4" },
+            { word: "Hielo", type: "contraejemplo", path: "h/1_hielo_front_neg.mp4" }
+        ];
+        
+        let currentVideoIndex = 0;
+        let score = 0;
+        let isTestStarted = false;
+        let currentVideoPlayed = false;
+        
+        function playVideo(videoId) {
+            const video = document.getElementById(videoId);
+            const playBtn = video.nextElementSibling;
+            
+            video.play();
+            playBtn.style.display = 'none';
+            
+            video.onended = function() {
+                playBtn.style.display = 'flex';
+            };
+        }
+        
+        function startTest() {
+            isTestStarted = true;
+            document.getElementById('current-word').textContent = videoList[currentVideoIndex].word;
+            updateProgress();
+            
+            // Create video element for the test
+            const wordDisplay = document.getElementById('current-word');
+            const videoContainer = document.createElement('div');
+            videoContainer.className = 'video-container';
+            videoContainer.innerHTML = `
+                <video id="test-video" controls>
+                    <source src="${videoList[currentVideoIndex].path}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-btn" onclick="playTestVideo()"></div>
+            `;
+            
+            wordDisplay.parentNode.insertBefore(videoContainer, wordDisplay.nextSibling);
+        }
+        
+        function playTestVideo() {
+            const video = document.getElementById('test-video');
+            const playBtn = document.querySelector('.play-btn');
+            
+            video.play();
+            playBtn.style.display = 'none';
+            currentVideoPlayed = true;
+            
+            video.onended = function() {
+                playBtn.style.display = 'flex';
+            };
+        }
+        
+        function nextVideo() {
+            if (!isTestStarted) {
+                startTest();
+                return;
+            }
+            
+            // Hide feedback
+            document.getElementById('feedback-correct').style.display = 'none';
+            document.getElementById('feedback-incorrect').style.display = 'none';
+            
+            // Remove current video
+            const videoContainer = document.querySelector('.video-container');
+            if (videoContainer) {
+                videoContainer.remove();
+            }
+            
+            // Move to next video
+            currentVideoIndex++;
+            currentVideoPlayed = false;
+            
+            if (currentVideoIndex < videoList.length) {
+                document.getElementById('current-word').textContent = videoList[currentVideoIndex].word;
+                updateProgress();
+                
+                // Create new video element
+                const wordDisplay = document.getElementById('current-word');
+                const newVideoContainer = document.createElement('div');
+                newVideoContainer.className = 'video-container';
+                newVideoContainer.innerHTML = `
+                    <video id="test-video" controls>
+                        <source src="${videoList[currentVideoIndex].path}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-btn" onclick="playTestVideo()"></div>
+                `;
+                
+                wordDisplay.parentNode.insertBefore(newVideoContainer, wordDisplay.nextSibling);
+            } else {
+                // Test completed
+                document.querySelector('.content').innerHTML = `
+                    <div class="completed-message">
+                        <h2>Excellent!</h2>
+                        <p>You have completed all video classifications.</p>
+                        <p>Final score: ${score}/20</p>
+                        <p>This is all for the sound of the letter H.</p>
+                        <h3>THANK YOU</h3>
+                    </div>
+                `;
+            }
+        }
+        
+        function checkAnswer(userAnswer) {
+            if (!isTestStarted) {
+                startTest();
+                return;
+            }
+            
+            if (!currentVideoPlayed) {
+                alert("Please watch the video before answering.");
+                return;
+            }
+            
+            const correctAnswer = videoList[currentVideoIndex].type;
+            const feedbackCorrect = document.getElementById('feedback-correct');
+            const feedbackIncorrect = document.getElementById('feedback-incorrect');
+            
+            if (userAnswer === correctAnswer) {
+                feedbackCorrect.style.display = 'block';
+                feedbackIncorrect.style.display = 'none';
+                score++;
+                document.getElementById('score').textContent = `Score: ${score}/20`;
+            } else {
+                feedbackIncorrect.style.display = 'block';
+                feedbackCorrect.style.display = 'none';
+            }
+        }
+        
+        function updateProgress() {
+            const progressPercentage = (currentVideoIndex / videoList.length) * 100;
+            document.getElementById('progress').style.width = `${progressPercentage}%`;
+        }
+        
+        // Initialize the page
+        document.getElementById('score').textContent = `Score: ${score}/20`;
+        
+        // Disable right-click context menu to prevent saving videos
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
