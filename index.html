@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Letter H</title>
   <style>
+
     :root {
       --bg: #0f172a; /* slate-900 */
       --panel: #111827; /* gray-900 */
@@ -54,116 +55,115 @@
   <div class="wrap">
     <header>
         <h1>Letter: H</h1>
-      <!-- <h1>Entrenador móvil — Sonido de la <span class="pill">H</span></h1>in</b> a word.</p> -->
     </header>
 
-    <!-- STEP 0: Intro / Instructions (EN + ES) -->
+    <!-- STEP 0: Intro / Instructions -->
     <section id="step0" class="card">
       <div class="card-inner">
         <h2>Instructions</h2>
         <div class="grid two">
           <div>
-            <p class="big">Today we are going to work on the sound that the letter H makes in the beginning or within a word.</p>
+            <p class="big">Today we are going to work on the sound that the letter H makes at the beginning or inside a word.</p>
             <ul>
-              <li>Consider that the H is silent in Spanish.</li>
+              <li>Remember that H is silent in Spanish.</li>
               <li>Example: The letter H in <i>Herb</i> makes the same sound as the letter H in Spanish.</li>
-              <li>You will watch four series of videos presenting the correct (<b>EJEMPLO</b>) and incorrect (<b>CONTRAEJEMPLO</b>) pronunciation with frontal or lateral close‑up view. You can replay these <b>unlimited</b> times.</li>
-              <li>Then, you will categorize <b>20 videos</b> as <b>EJEMPLO</b> vs <b>CONTRAEJEMPLO</b>. Each of these can be played <b>once</b> before answering.</li>
-              <li>From this point forward, the researcher will only communicate in Spanish.</li>
+              <li>You will watch four series of videos with correct (<b>EXAMPLE</b>) and incorrect (<b>COUNTEREXAMPLE</b>) pronunciations with front or side close-up view. You can replay them <b>unlimited</b> times.</li>
+              <li>Then you will classify <b>20 videos</b> as <b>EXAMPLE</b> vs <b>COUNTEREXAMPLE</b>. Each video can be played <b>once</b> before answering.</li>
+              <li>From this point onward, the researcher will only communicate in Spanish.</li>
             </ul>
           </div>
-          <div>
-            <p class="big"><b>¡Ahora en español!</b></p>
+          <!-- <div>
+            <p class="big"><b>Now in Spanish!</b></p>
             <ul>
               <li>Hoy trabajaremos el sonido de la letra <b>H</b> al inicio o dentro de la palabra.</li>
               <li>Recuerda que la <b>H</b> es <b>silenciosa</b> en español.</li>
-              <li>Verás cuatro series de videos con pronunciaciones correctas (EJEMPLO) e incorrectas (CONTRAEJEMPLO). Puedes reproducirlos cuantas veces quieras.</li>
-              <li>Luego clasificarás 20 videos entre EJEMPLO y CONTRAEJEMPLO. Solo podrás reproducir cada video <b>una vez</b> antes de responder.</li>
+              <li>Verás cuatro series de videos con pronunciaciones correctas (Example) e incorrectas (CounterExample). Puedes reproducirlos cuantas veces quieras.</li>
+              <li>Luego clasificarás 20 videos entre Example y CounterExample. Solo podrás reproducir cada video <b>una vez</b> antes de responder.</li>
               <li>Después, tendrás tu turno para practicar con <b>tres intentos</b> por palabra. Si lo dices correctamente, escucharás un “clic”.</li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <div class="spacer"></div>
         <div class="row center">
-          <button class="btn" id="startExamples">SIGUIENTE</button>
+          <button class="btn" id="startExamples">NEXT</button>
         </div>
       </div>
     </section>
 
-    <!-- STEP 1: Four Example Series (replay allowed) -->
+    <!-- STEP 1: Four Example Series -->
     <section id="step1" class="card hidden">
       <div class="card-inner">
         <div class="row" style="justify-content:space-between; align-items:center;">
-          <h2 style="margin:0">Serie de ejemplos <span id="exSeriesIdx" class="tag">1 / 4</span></h2>
-          <span class="muted">Reproduce libremente. Luego pulsa <b>SIGUIENTE</b>.</span>
+          <h2 style="margin:0">Examples<span id="exSeriesIdx" class="tag">1 / 4</span></h2>
+          <span class="muted">Listen, then press <b>NEXT</b>.</span>
         </div>
         <div class="spacer"></div>
         <div id="exSeriesBox" class="grid two"></div>
         <div class="spacer"></div>
         <div class="row center">
-          <button class="btn ghost" id="prevSeries">Anterior</button>
-          <button class="btn" id="nextSeries">SIGUIENTE</button>
+          <button class="btn ghost" id="prevSeries">Previous</button>
+          <button class="btn" id="nextSeries">NEXT</button>
         </div>
       </div>
     </section>
 
-    <!-- STEP 2: Categorize 20 videos (single play) -->
+    <!-- STEP 2: Categorize -->
     <section id="step2" class="card hidden">
       <div class="card-inner">
         <div class="row" style="justify-content:space-between; align-items:center;">
-          <h2 style="margin:0">¡Tu turno! — Clasificación</h2>
+          <h2 style="margin:0">Your Turn! Classification</h2>
           <div style="min-width:160px">
             <div class="progress"><div class="bar" id="catBar"></div></div>
             <div class="muted" style="font-size:12px; text-align:right"><span id="catIdx">1</span>/20</div>
           </div>
         </div>
-        <p class="muted">Puedes reproducir cada video <b>una sola vez</b> antes de elegir tu respuesta.</p>
+        <p class="muted">You can play each video <b>only once</b> before choosing your answer.</p>
         <div id="catWord" class="pill" style="margin-bottom:8px; display:inline-block"></div>
         <video id="catVideo" playsinline preload="metadata"></video>
         <div class="row">
-          <button class="btn secondary" id="playCat">▶ Reproducir</button>
-          <button class="btn success" id="btnEjemplo">EJEMPLO</button>
-          <button class="btn danger" id="btnContra">CONTRAEJEMPLO</button>
+          <button class="btn secondary" id="playCat">▶ Play</button>
+          <button class="btn success" id="btnCorrect">Correct</button>
+          <button class="btn danger" id="btnIncorrect">Incorrect</button>
         </div>
         <p id="catFeedback" class="big center hidden"></p>
       </div>
     </section>
 
-    <!-- STEP 3: Practice — three attempts with a click on success -->
+    <!-- STEP 3: Practice -->
     <section id="step3" class="card hidden">
       <div class="card-inner">
         <div class="row" style="justify-content:space-between; align-items:center;">
-          <h2 style="margin:0">¡Ahora practica tú! <span class="tag">3 intentos</span></h2>
+          <h2 style="margin:0">Now you practice! <span class="tag">3 tries</span></h2>
           <div style="min-width:160px">
             <div class="progress"><div class="bar" id="pracBar"></div></div>
             <div class="muted" style="font-size:12px; text-align:right"><span id="pracIdx">1</span>/20</div>
           </div>
         </div>
-        <p class="muted">Verás el EJEMPLO una vez. Luego graba hasta tres intentos. Si el investigador marca tu producción como correcta, escucharás un “clic”.</p>
+        <p class="muted">You'll see the EXAMPLE once. Then record up to three attempts. If the researcher marks your production as correct, you will hear a “click”.</p>
 
         <div id="pracWord" class="pill" style="margin-bottom:8px; display:inline-block"></div>
         <video id="pracVideo" playsinline preload="metadata"></video>
         <div class="row">
-          <button class="btn secondary" id="playPrac">▶ Ver EJEMPLO (1 vez)</button>
+          <button class="btn secondary" id="playPrac">▶ See EXAMPLE (1 time)</button>
         </div>
         <div class="spacer"></div>
 
         <div id="micBlock" class="card" style="background:#0b1220;">
           <div class="card-inner">
             <div class="row" style="justify-content:space-between; align-items:center;">
-              <strong>Grabación</strong>
-              <span class="muted">Permite el micrófono. Funciona mejor desde <b>http://localhost</b> o HTTPS.</span>
+              <strong>Recording</strong>
+              <span class="muted">Allow microphone. Works best from <b>http://localhost</b> or HTTPS.</span>
             </div>
             <div class="spacer"></div>
             <div class="row">
-              <button class="btn" id="btnMic">Conceder micrófono</button>
-              <button class="btn ghost" id="btnRec" disabled>● Grabar intento</button>
-              <button class="btn ghost" id="btnStop" disabled>■ Detener</button>
+              <button class="btn" id="btnMic">Grant microphone</button>
+              <button class="btn ghost" id="btnRec" disabled>● Record attempt</button>
+              <button class="btn ghost" id="btnStop" disabled>■ Stop</button>
             </div>
             <div class="spacer"></div>
             <div class="row">
-              <button class="btn success" id="btnMarkOk" disabled>Marcar como correcto (clic)</button>
-              <button class="btn danger" id="btnMarkNo" disabled>No correcto</button>
+              <button class="btn success" id="btnMarkOk" disabled>Mark as correct (click)</button>
+              <button class="btn danger" id="btnMarkNo" disabled>Not correct</button>
               <span class="muted" id="triesLeft"></span>
             </div>
             <div id="attemptsList" class="grid two" style="margin-top:10px"></div>
@@ -172,52 +172,47 @@
       </div>
     </section>
 
-    <!-- STEP 4: 1‑minute timing (nonsense words) -->
+    <!-- STEP 4: Timer -->
     <section id="step4" class="card hidden">
       <div class="card-inner center">
-        <h2>Cronómetro de 1 minuto — Palabras sin sentido</h2>
-        <p class="muted">Cuando estés list@, pulsa <b>Iniciar</b>. Cuenta tus respuestas por fuera o con el marcador.</p>
+        <h2>1-minute Timer - Nonsense Words</h2>
+        <p class="muted">When you're ready, press <b>Start</b>. Count your responses separately or with the counter.</p>
         <div class="spacer"></div>
         <div class="row center" style="justify-content:center">
-          <button class="btn" id="timerStart">Iniciar</button>
-          <button class="btn ghost" id="timerStop" disabled>Detener</button>
-          <button class="btn secondary" id="timerReset">Reiniciar</button>
+          <button class="btn" id="timerStart">Start</button>
+          <button class="btn ghost" id="timerStop" disabled>Stop</button>
+          <button class="btn secondary" id="timerReset">Reset</button>
         </div>
         <h1 id="timerDisplay" style="font-variant-numeric: tabular-nums; font-size:64px; margin:18px 0 6px;">01:00.0</h1>
         <div class="row center" style="justify-content:center">
           <button class="btn success" id="countPlus">+1</button>
-          <button class="btn danger" id="countMinus">−1</button>
+          <button class="btn danger" id="countMinus">-1</button>
         </div>
-        <p class="big">Conteo: <b id="countVal">0</b></p>
+        <p class="big">Count: <b id="countVal">0</b></p>
         <div class="spacer"></div>
-        <button class="btn" id="toEnd">SIGUIENTE</button>
+        <button class="btn" id="toEnd">NEXT</button>
       </div>
     </section>
 
-    <!-- STEP 5: End / Gracias -->
+    <!-- STEP 5: End -->
     <section id="step5" class="card hidden">
       <div class="card-inner center">
-        <h2>Esto es todo por el sonido de la letra H.</h2>
-        <p class="big">GRACIAS</p>
+        <h2>This is all for the sound of the letter H.</h2>
+        <p class="big">THANK YOU</p>
         <div class="spacer"></div>
-        <button class="btn ghost" id="restart">Reiniciar</button>
+        <button class="btn ghost" id="restart">Restart</button>
       </div>
     </section>
-
-    <footer>
-      <!-- <p>Coloca este archivo junto a la carpeta <code>h/</code> con los videos. 
-      Si el micrófono no funciona desde <code>file://</code>, ejecuta en esa carpeta <span class="kbd">python -m http.server 8000</span> y abre <a href="#" onclick="alert('Abre http://localhost:8000 en tu navegador'); return false;">http://localhost:8000</a>.</p> -->
-    </footer>
   </div>
-
 <script>
+
 // ------------------- Data / Sources -------------------
 // (A) Four example series (free replay)
 const EXAMPLE_SERIES = [
-  { title: "Escucha — Hacer", ej: "h/1_hacer_front_eg.mp4", contra: "h/1_hacer_front_neg.mp4" },
-  { title: "Escucha — Historia", ej: "h/1_historia_front_eg.mp4", contra: "h/1_historia_front_neg.mp4" },
-  { title: "Escucha — Alcohol", ej: "h/1_alcohol_front_eg.mp4", contra: "h/1_alcohol_front_neg.mp4" },
-  { title: "Escucha — Adherí", ej: "h/1_adher_side_eg.mp4", contra: "h/1_adher_front_neg.mp4" },
+  { title: "Escucha - Hacer", ej: "h/1_hacer_front_eg.mp4", contra: "h/1_hacer_front_neg.mp4" },
+  { title: "Escucha - Historia", ej: "h/1_historia_front_eg.mp4", contra: "h/1_historia_front_neg.mp4" },
+  { title: "Escucha - Alcohol", ej: "h/1_alcohol_front_eg.mp4", contra: "h/1_alcohol_front_neg.mp4" },
+  { title: "Escucha - Adherí", ej: "h/1_adher_side_eg.mp4", contra: "h/1_adher_front_neg.mp4" },
 ];
 
 // (B) Pool for 20-classification task (single play)
@@ -268,13 +263,21 @@ const PRACTICE_LIST = [
   { word: "Rehusar", eg: "h/1_rehusar_front_eg.mp4" },
 ];
 
+// const PRAISE = [
+//   "¡Muy buen trabajo!",
+//   "Correcto",
+//   "~ I N C R E Í B L E ~",
+//   "Excelente",
+//   "Así es como se hace."
+// ];
+
 const PRAISE = [
-  "¡Muy buen trabajo!",
-  "Correcto",
-  "~ I N C R E Í B L E ~",
-  "Excelente",
-  "Así es como se hace."
+  "Good Job!",
+    "Correct",
+
 ];
+
+
 
 // ------------------- Helpers -------------------
 const $ = (sel) => document.querySelector(sel);
@@ -296,23 +299,23 @@ function renderSeries(){
   slot.innerHTML = '';
   const item = EXAMPLE_SERIES[exIdx];
   const cards = [
-    { label: 'Ejemplo', src: item.ej },
-    { label: 'Contraejemplo', src: item.contra },
+    { label: 'Example', src: item.ej },
+    { label: 'CounterExample', src: item.contra },
   ];
   cards.forEach(c=>{
     const wrap = document.createElement('div');
     wrap.className = 'card';
     wrap.innerHTML = `<div class="card-inner">
-      <h3 style="margin:6px 0 10px">${item.title} — <span class="tag">${c.label}</span></h3>
+      <h3 style="margin:6px 0 10px">${item.title} - <span class="tag">${c.label}</span></h3>
       <video playsinline preload="metadata" src="${c.src}"></video>
-      <div class="row" style="margin-top:8px"><button class="btn secondary">▶ Reproducir</button></div>
+      <div class="row" style="margin-top:8px"><button class="btn secondary">▶ Play</button></div>
     </div>`;
     const v = wrap.querySelector('video');
     wrap.querySelector('button').addEventListener('click',()=>{ v.currentTime = 0; v.play(); });
     slot.appendChild(wrap);
   });
   $('#prevSeries').disabled = (exIdx===0);
-  $('#nextSeries').textContent = (exIdx===EXAMPLE_SERIES.length-1) ? 'SIGUIENTE' : 'Siguiente serie';
+  $('#nextSeries').textContent = (exIdx===EXAMPLE_SERIES.length-1) ? 'NEXT' : 'Next';
 }
 $('#prevSeries').addEventListener('click',()=>{ if(exIdx>0){ exIdx--; renderSeries(); }});
 $('#nextSeries').addEventListener('click',()=>{ if(exIdx<EXAMPLE_SERIES.length-1){ exIdx++; renderSeries(); } else { startCategorization(); showStep(2); }});
@@ -341,26 +344,26 @@ function renderCat(){
   const v = $('#catVideo'); v.src = item.src; v.currentTime = 0; v.pause();
   playedOnce = false;
   $('#catFeedback').classList.add('hidden');
-  $('#playCat').disabled = false; $('#btnEjemplo').disabled = true; $('#btnContra').disabled = true;
+  $('#playCat').disabled = false; $('#btnCorrect').disabled = true; $('#btnIncorrect').disabled = true;
 }
 $('#playCat').addEventListener('click',()=>{
   if(playedOnce) return; // enforce single play
-  const v = $('#catVideo'); v.currentTime = 0; v.play(); playedOnce = true; $('#playCat').disabled = true; $('#btnEjemplo').disabled = false; $('#btnContra').disabled = false;
+  const v = $('#catVideo'); v.currentTime = 0; v.play(); playedOnce = true; $('#playCat').disabled = true; $('#btnCorrect').disabled = false; $('#btnIncorrect').disabled = false;
 });
 function checkCat(answer){
   const item = catQueue[catIdx];
   const correct = (answer === item.truth);
   const fb = $('#catFeedback');
   if(correct){ catScore++; fb.textContent = PRAISE[Math.floor(Math.random()*PRAISE.length)]; }
-  else { fb.textContent = 'Incorrecto'; }
+  else { fb.textContent = 'Incorrect'; }
   fb.classList.remove('hidden');
   setTimeout(()=>{
     catIdx++;
     if(catIdx>=20) { startPractice(); showStep(3); } else { renderCat(); }
   }, 900);
 }
-$('#btnEjemplo').addEventListener('click',()=>checkCat('eg'));
-$('#btnContra').addEventListener('click',()=>checkCat('neg'));
+$('#btnCorrect').addEventListener('click',()=>checkCat('eg'));
+$('#btnIncorrect').addEventListener('click',()=>checkCat('neg'));
 
 // ------------------- Step 3: Practice (3 attempts, with click) -------------------
 let pracIdx = 0;
@@ -372,12 +375,12 @@ function renderPractice(){
   $('#pracBar').style.width = `${(pracIdx/20)*100}%`;
   $('#pracWord').textContent = item.word;
   const v = $('#pracVideo'); v.src = item.eg; v.currentTime = 0; v.pause();
-  $('#playPrac').disabled = false; $('#playPrac').textContent = '▶ Ver EJEMPLO (1 vez)';
+  $('#playPrac').disabled = false; $('#playPrac').textContent = '▶ Ver Example (1 vez)';
   tries = 0; updateTries();
   $('#btnRec').disabled = !micStream; $('#btnStop').disabled = true; $('#btnMarkOk').disabled = true; $('#btnMarkNo').disabled = true;
   $('#attemptsList').innerHTML = '';
 }
-$('#playPrac').addEventListener('click',()=>{ const v=$('#pracVideo'); v.currentTime=0; v.play(); $('#playPrac').disabled=true; $('#playPrac').textContent='Ejemplo reproducido'; });
+$('#playPrac').addEventListener('click',()=>{ const v=$('#pracVideo'); v.currentTime=0; v.play(); $('#playPrac').disabled=true; $('#playPrac').textContent='Example reproducido'; });
 function updateTries(){ $('#triesLeft').textContent = `Intentos restantes: ${Math.max(0, 3-tries)}`; }
 $('#btnMic').addEventListener('click', async ()=>{
   try{ micStream = await navigator.mediaDevices.getUserMedia({audio:true}); $('#btnMic').textContent='Micrófono listo'; $('#btnRec').disabled=false; }catch(e){ alert('No se pudo acceder al micrófono.'); }
