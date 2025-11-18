@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/jspsych@7.3.4"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.3"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0"></script>
+  <link rel="stylesheet" href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" />
+</head>
+<body></body>
+
+<script>
+const jsPsych = initJsPsych();
+
+// --------------------
+// Python-generated arrays
+const trials = [
+  {
+    "left": "example_videos/1_adher_side_eg-c.mp4",
+    "right": "example_videos/1_adher_side_neg-c.mp4"
+  },
+  {
+    "left": "example_videos/1_alcohol_side_eg-c.mp4",
+    "right": "example_videos/1_alcohol_side_neg-c.mp4"
+  },
+  {
+    "left": "example_videos/1_hacer_front_eg-c.mp4",
+    "right": "example_videos/1_hacer_front_neg-c.mp4"
+  },
+  {
+    "left": "example_videos/1_historia_side_eg-c.mp4",
+    "right": "example_videos/1_historia_side_neg-c.mp4"
+  }
+];
+
+const all_videos = [
+  "example_videos/1_adher_side_neg-c.mp4",
+  "example_videos/1_alcohol_side_eg-c.mp4",
+  "example_videos/1_historia_side_neg-c.mp4",
+  "example_videos/1_adher_side_eg-c.mp4",
+  "example_videos/1_hacer_front_neg-c.mp4",
+  "example_videos/1_historia_side_eg-c.mp4",
+  "example_videos/1_alcohol_side_neg-c.mp4",
+  "example_videos/1_hacer_front_eg-c.mp4"
+];
+// --------------------
+
+// Preload all videos
+const preload = {
+  type: jsPsychPreload,
+  video: all_videos
+};
+
+// Instruction trial
+const instructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <h2>Letter: H</h2>
+    <h3>Instructions</h3>
+    <p>Today we are going to work on the sound that the letter H makes at the beginning or inside a word.</p>
+    <p><strong>Remember that H is silent in Spanish.</strong></p>
+    <p>Example: The letter H in <em>Herb</em> makes the same sound as the letter H in Spanish.</p>
+    <p>You will watch four series of videos with correct (EXAMPLE) and incorrect (COUNTEREXAMPLE) pronunciations with front or side close-up view. You can replay them unlimited times.</p>
+    <p>Then you will classify 20 videos as EXAMPLE vs COUNTEREXAMPLE. Each video can be played once before answering.</p>
+    <p><strong>From this point onward, the researcher will only communicate in Spanish.</strong></p>
+  `,
+  choices: ["Continue"]
+};
+
+// Generate labeled example trials
+const example_trials = trials.map(pair => ({
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
+      <div style="text-align:center;">
+        <video width="300" controls>
+          <source src="${pair.left}" type="video/mp4">
+        </video>
+        <p><strong>EXAMPLE / Correct</strong></p>
+      </div>
+      <div style="text-align:center;">
+        <video width="300" controls>
+          <source src="${pair.right}" type="video/mp4">
+        </video>
+        <p><strong>COUNTEREXAMPLE / Incorrect</strong></p>
+      </div>
+    </div>
+    <p>Watch these example pronunciations. Click Continue when ready.</p>
+  `,
+  choices: ["Continue"]
+}));
+
+// Final redirect trial
+const redirect_trial = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>You have finished the example videos. Click Continue to proceed.</p>",
+  choices: ["Continue"],
+  on_finish: () => {
+    window.location.href = "word_quiz.html";
+  }
+};
+
+// Run the experiment
+jsPsych.run([preload, instructions, ...example_trials, redirect_trial]);
+</script>
+ 
+</html>

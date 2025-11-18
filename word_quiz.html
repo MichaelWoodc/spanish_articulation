@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/jspsych@7.3.4"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.3"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-video-button-response@1.2.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0"></script>
+  <link rel="stylesheet" href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" />
+</head>
+<body></body>
+
+<script>
+const jsPsych = initJsPsych();
+
+// ------------------
+// Redirect pages
+const pass_page = "https://michaelwoodcock.duckdns.org/pass";
+const fail_page = "https://michaelwoodcock.duckdns.org/fail";
+
+// ------------------
+// Instruction screen
+const instructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <h2>Letter: H</h2>
+    <h3>Instructions</h3>
+    <p>Today we are going to work on the sound that the letter H makes at the beginning or inside a word.</p>
+    <p><b>Remember that H is silent in Spanish.</b></p>
+    <p>Example: The letter H in <i>Herb</i> makes the same sound as the letter H in Spanish.</p>
+    <p>You will watch four series of videos with correct (<b>EXAMPLE</b>) and incorrect (<b>COUNTEREXAMPLE</b>) pronunciations with front or side close-up view. You can replay them unlimited times.</p>
+    <p>Then you will classify 20 videos as EXAMPLE vs COUNTEREXAMPLE. Each video can be played once before answering.</p>
+    <p><b>From this point onward, the researcher will only communicate in Spanish.</b></p>
+  `,
+  choices: ["Continue"]
+};
+
+// ------------------
+// Video list + answers
+const trial_info = [
+  {"file":"quiz_videos/1_cohibir_front_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_hablar_front_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_hidalgo_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/2_ahora_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_historia_front_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/2_almohada_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_hada_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/2_azahar_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_rehn_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_rehusar_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_hembra_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_humo_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_adher_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_ahuyentar_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_cohete_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_exhalo_side_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_azahar_front_eg-c.mp4","correctness":"correct"},
+  {"file":"quiz_videos/1_hielo_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/2_cohete_side_neg-c.mp4","correctness":"incorrect"},
+  {"file":"quiz_videos/1_horario_front_eg-c.mp4","correctness":"correct"}
+];
+
+// ------------------
+// Preload videos
+const preload = { type: jsPsychPreload, video: trial_info.map(t => t.file) };
+
+// Track scores
+let total_correct = 0;
+let total_incorrect = 0;
+
+// ------------------
+// Helper: extract word between first two underscores after folder
+function extractWord(filename){
+  const base = filename.split("/").pop();   // "1_cohibir_front_neg-c.mp4"
+  const parts = base.split("_");
+  return parts.length >= 2 ? parts[1].replace(".mp4","") : base.replace(".mp4","");
+}
+
+// ------------------
+// Build trial + feedback pairs
+const quiz_trials = trial_info.flatMap(trial => {
+  const word = extractWord(trial.file);
+
+  const question_trial = {
+    type: jsPsychVideoButtonResponse,
+    stimulus: [trial.file],
+    choices: ['Correct','Incorrect'],
+    prompt: `<p>Is the example above for <b>${word}</b> correct?</p>`,
+    response_allowed_while_playing: true,
+    controls: false,
+    on_finish: function(data){
+      data.correctness = trial.correctness;
+      const chosen = data.response === 0 ? "correct" : "incorrect";
+      data.chosen = chosen;
+      data.is_right = (chosen === trial.correctness);
+      if(data.is_right) total_correct++;
+      else total_incorrect++;
+    }
+  };
+
+  const feedback_trial = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: function(){
+      const last = jsPsych.data.get().last(1).values()[0];
+      return last.is_right
+        ? `<h1 style='color:green'>Correct for <b>${word}</b>!</h1>`
+        : `<h1 style='color:red'>Incorrect for <b>${word}</b>.</h1>`;
+    },
+    choices: [], // no button
+    trial_duration: 1500, // auto‑advance after 1.5s
+    response_ends_trial: false
+  };
+
+  return [question_trial, feedback_trial];
+});
+
+// ------------------
+// Final score + redirect
+const final_trial = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: function(){
+    const total = total_correct + total_incorrect;
+    const percent = Math.round((total_correct / total) * 100);
+    const passed = percent >= 70;
+
+    return `
+      <p>Quiz complete!</p>
+      <p>Your score: <b>${percent}%</b></p>
+      <p>${passed ? "You passed!" : "You did not pass."}</p>
+    `;
+  },
+  choices: ["Continue"],
+  on_finish: function(){
+    const total = total_correct + total_incorrect;
+    const percent = Math.round((total_correct / total) * 100);
+    if(percent >= 70){
+      window.location.href = pass_page;
+    } else {
+      window.location.href = fail_page;
+    }
+  }
+};
+
+// ------------------
+// Run experiment
+jsPsych.run([instructions, preload, ...quiz_trials, final_trial]);
+</script>
+</html>
