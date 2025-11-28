@@ -70,38 +70,52 @@ const instructions = {
   stimulus: `
     <h2>Letter: H</h2>
     <h3>Instructions</h3>
-    <p>Today we are going to work on the sound that the letter H makes at the beginning or inside a word.</p>
-    <p><strong>Remember that H is silent in Spanish.</strong></p>
+    <p>Today we are going to work on the sound that the letter H makes at the beginning or inside a word.
+    <strong>Remember that H is silent in Spanish.</strong></p>
     <p>Example: The letter H in <em>Herb</em> makes the same sound as the letter H in Spanish.</p>
-    <p>You will watch four series of videos with correct (EXAMPLE) and incorrect (COUNTEREXAMPLE) pronunciations with front or side close-up view. You can replay them unlimited times.</p>
-    <p>Then you will classify 20 videos as EXAMPLE vs COUNTEREXAMPLE. Each video can be played once before answering.</p>
+    <p>You will watch four series of videos with correct (EXAMPLE) and incorrect (COUNTEREXAMPLE) pronunciations with front or side close-up view. You can replay them unlimited times.
+    Then you will classify 20 videos as EXAMPLE vs COUNTEREXAMPLE. Each video can be played once before answering.</p>
     <p><strong>From this point onward, the researcher will only communicate in Spanish.</strong></p>
   `,
   choices: ["Continue"]
 };
 
+// Helper function: extract word name from filename
+function getWordName(path) {
+  // Example: "example_videos/1_adher_side_eg-c.mp4"
+  const filename = path.split('/').pop();        // "1_adher_side_eg-c.mp4"
+  const parts = filename.split('_');             // ["1", "adher", "side", "eg-c.mp4"]
+  return parts[1];                               // "adher"
+}
+
 // Generate labeled example trials
-const example_trials = trials.map(pair => ({
-  type: jsPsychHtmlButtonResponse,
-  stimulus: `
-    <div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
-      <div style="text-align:center;">
-        <video width="300" controls>
-          <source src="${pair.left}" type="video/mp4">
-        </video>
-        <p><strong>EXAMPLE / Correct</strong></p>
+const example_trials = trials.map(pair => {
+  const word = getWordName(pair.left); // extract word from left video filename
+  return {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `
+      <div style="text-align:center; margin-bottom:20px;">
+        <h2 style="margin:0;">${word.toUpperCase()}</h2>
       </div>
-      <div style="text-align:center;">
-        <video width="300" controls>
-          <source src="${pair.right}" type="video/mp4">
-        </video>
-        <p><strong>COUNTEREXAMPLE / Incorrect</strong></p>
+      <div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
+        <div style="text-align:center;">
+          <video width="300" controls>
+            <source src="${pair.left}" type="video/mp4">
+          </video>
+          <p><strong>EXAMPLE / Correct</strong></p>
+        </div>
+        <div style="text-align:center;">
+          <video width="300" controls>
+            <source src="${pair.right}" type="video/mp4">
+          </video>
+          <p><strong>COUNTEREXAMPLE / Incorrect</strong></p>
+        </div>
       </div>
-    </div>
-    <p>Watch these example pronunciations. Click Continue when ready.</p>
-  `,
-  choices: ["Continue"]
-}));
+      <p>Watch these example pronunciations. Click Continue when ready.</p>
+    `,
+    choices: ["Continue"]
+  };
+});
 
 // Final redirect trial
 const redirect_trial = {
