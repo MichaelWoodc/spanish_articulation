@@ -1,0 +1,33 @@
+{
+  "text": " Ahorra, ahorra, ahorra.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.64,
+      "text": " Ahorra, ahorra, ahorra.",
+      "tokens": [
+        50364,
+        316,
+        2335,
+        424,
+        11,
+        257,
+        2335,
+        424,
+        11,
+        257,
+        2335,
+        424,
+        13,
+        50546
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5929487228393555,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.24302950501441956
+    }
+  ],
+  "language": "es"
+}

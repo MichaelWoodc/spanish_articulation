@@ -1,0 +1,24 @@
+{
+  "text": " historia historia historia",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 8.36,
+      "text": " historia historia historia",
+      "tokens": [
+        50364,
+        18385,
+        18385,
+        18385,
+        50782
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9323246479034424,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.4478103220462799
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,31 @@
+{
+  "text": " Auxentar, ausentar, ausentar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Auxentar, ausentar, ausentar.",
+      "tokens": [
+        50364,
+        316,
+        2449,
+        32067,
+        11,
+        3437,
+        32067,
+        11,
+        3437,
+        32067,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6113195786109338,
+      "compression_ratio": 1.2083333333333333,
+      "no_speech_prob": 0.3854847550392151
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,27 @@
+{
+  "text": " el lado el lado el lado",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.4,
+      "text": " el lado el lado el lado",
+      "tokens": [
+        50364,
+        806,
+        11631,
+        806,
+        11631,
+        806,
+        11631,
+        50734
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.551424503326416,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.41203373670578003
+    }
+  ],
+  "language": "es"
+}

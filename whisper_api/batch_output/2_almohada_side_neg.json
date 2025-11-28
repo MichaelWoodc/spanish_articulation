@@ -1,0 +1,34 @@
+{
+  "text": " Amor hara, amor hara, amor hara.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.84,
+      "text": " Amor hara, amor hara, amor hara.",
+      "tokens": [
+        50364,
+        2012,
+        284,
+        2233,
+        64,
+        11,
+        15543,
+        2233,
+        64,
+        11,
+        15543,
+        2233,
+        64,
+        13,
+        50556
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4965324103832245,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.2018919587135315
+    }
+  ],
+  "language": "es"
+}

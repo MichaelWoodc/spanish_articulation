@@ -1,0 +1,27 @@
+{
+  "text": " re en re en re en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.28,
+      "text": " re en re en re en",
+      "tokens": [
+        50364,
+        319,
+        465,
+        319,
+        465,
+        319,
+        465,
+        50678
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9372244940863715,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.4179454743862152
+    }
+  ],
+  "language": "es"
+}

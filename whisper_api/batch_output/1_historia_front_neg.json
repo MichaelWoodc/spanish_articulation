@@ -1,0 +1,29 @@
+{
+  "text": " Historia, Historia, Historia",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Historia, Historia, Historia",
+      "tokens": [
+        50364,
+        9038,
+        8172,
+        11,
+        9038,
+        8172,
+        11,
+        9038,
+        8172,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6052998629483309,
+      "compression_ratio": 1.3333333333333333,
+      "no_speech_prob": 0.26641765236854553
+    }
+  ],
+  "language": "es"
+}

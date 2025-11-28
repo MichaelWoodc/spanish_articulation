@@ -1,0 +1,32 @@
+{
+  "text": " almohada, almohada, almohada",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " almohada, almohada, almohada",
+      "tokens": [
+        50364,
+        18667,
+        1445,
+        1538,
+        11,
+        18667,
+        1445,
+        1538,
+        11,
+        18667,
+        1445,
+        1538,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3273457799639021,
+      "compression_ratio": 1.3333333333333333,
+      "no_speech_prob": 0.17174319922924042
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,34 @@
+{
+  "text": " ¡Hidalgo, Hidalgo, Hidalgo!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.48,
+      "text": " ¡Hidalgo, Hidalgo, Hidalgo!",
+      "tokens": [
+        50364,
+        6514,
+        39,
+        22151,
+        1571,
+        11,
+        389,
+        22151,
+        1571,
+        11,
+        389,
+        22151,
+        1571,
+        0,
+        50638
+      ],
+      "temperature": 0.6,
+      "avg_logprob": -0.6471697688102722,
+      "compression_ratio": 1.2727272727272727,
+      "no_speech_prob": 0.4151521623134613
+    }
+  ],
+  "language": "es"
+}

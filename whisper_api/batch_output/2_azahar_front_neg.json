@@ -1,0 +1,30 @@
+{
+  "text": " Sahar, Sahar, Sahar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Sahar, Sahar, Sahar.",
+      "tokens": [
+        50364,
+        18280,
+        289,
+        11,
+        18280,
+        289,
+        11,
+        18280,
+        289,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4906222422917684,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.3151916563510895
+    }
+  ],
+  "language": "es"
+}

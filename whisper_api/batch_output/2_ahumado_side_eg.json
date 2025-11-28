@@ -1,0 +1,33 @@
+{
+  "text": " Aumado, Aumado, Aumado.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Aumado, Aumado, Aumado.",
+      "tokens": [
+        50364,
+        316,
+        449,
+        1573,
+        11,
+        316,
+        449,
+        1573,
+        11,
+        316,
+        449,
+        1573,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.48921566009521483,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.15646810829639435
+    }
+  ],
+  "language": "es"
+}

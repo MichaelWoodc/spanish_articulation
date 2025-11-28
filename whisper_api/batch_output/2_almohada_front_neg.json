@@ -1,0 +1,35 @@
+{
+  "text": " Al mojada, al mojada, al mojada",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Al mojada, al mojada, al mojada",
+      "tokens": [
+        50364,
+        967,
+        705,
+        73,
+        1538,
+        11,
+        419,
+        705,
+        73,
+        1538,
+        11,
+        419,
+        705,
+        73,
+        1538,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5494630477007698,
+      "compression_ratio": 1.4090909090909092,
+      "no_speech_prob": 0.2085842341184616
+    }
+  ],
+  "language": "es"
+}

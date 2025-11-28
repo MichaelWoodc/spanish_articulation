@@ -1,0 +1,27 @@
+{
+  "text": " oja oja oja",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.68,
+      "text": " oja oja oja",
+      "tokens": [
+        50364,
+        277,
+        2938,
+        277,
+        2938,
+        277,
+        2938,
+        50748
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6525063514709473,
+      "compression_ratio": 0.7857142857142857,
+      "no_speech_prob": 0.43951550126075745
+    }
+  ],
+  "language": "es"
+}

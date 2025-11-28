@@ -1,0 +1,33 @@
+{
+  "text": " Aheri, aheri, aheri.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Aheri, aheri, aheri.",
+      "tokens": [
+        50364,
+        316,
+        511,
+        72,
+        11,
+        257,
+        511,
+        72,
+        11,
+        257,
+        511,
+        72,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5930157343546549,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.18305329978466034
+    }
+  ],
+  "language": "es"
+}

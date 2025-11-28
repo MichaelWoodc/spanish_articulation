@@ -1,0 +1,30 @@
+{
+  "text": " Urgar, urgar, urgar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Urgar, urgar, urgar.",
+      "tokens": [
+        50364,
+        9533,
+        2976,
+        11,
+        4038,
+        2976,
+        11,
+        4038,
+        2976,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6356712977091471,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.6146388053894043
+    }
+  ],
+  "language": "es"
+}

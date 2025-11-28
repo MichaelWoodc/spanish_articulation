@@ -1,0 +1,36 @@
+{
+  "text": " Ahuy Gentar, Ahuy Gentar, Ahuy Gentar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.5,
+      "text": " Ahuy Gentar, Ahuy Gentar, Ahuy Gentar.",
+      "tokens": [
+        50364,
+        2438,
+        7493,
+        33070,
+        289,
+        11,
+        2438,
+        7493,
+        33070,
+        289,
+        11,
+        2438,
+        7493,
+        33070,
+        289,
+        13,
+        50589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5836402575174967,
+      "compression_ratio": 1.52,
+      "no_speech_prob": 0.18286551535129547
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,34 @@
+{
+  "text": " Vájia, vájia, vájia.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Vájia, vájia, vájia.",
+      "tokens": [
+        50364,
+        691,
+        842,
+        73,
+        654,
+        11,
+        36625,
+        73,
+        654,
+        11,
+        36625,
+        73,
+        654,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.513002872467041,
+      "compression_ratio": 1.15,
+      "no_speech_prob": 0.207706481218338
+    }
+  ],
+  "language": "es"
+}

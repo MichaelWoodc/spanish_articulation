@@ -1,0 +1,29 @@
+{
+  "text": " humo, humo, humo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " humo, humo, humo",
+      "tokens": [
+        50364,
+        1484,
+        78,
+        11,
+        1484,
+        78,
+        11,
+        1484,
+        78,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5706088759682395,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.26884448528289795
+    }
+  ],
+  "language": "es"
+}

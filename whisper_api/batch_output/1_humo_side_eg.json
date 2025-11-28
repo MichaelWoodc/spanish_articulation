@@ -1,0 +1,57 @@
+{
+  "text": " humo humo humo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " humo",
+      "tokens": [
+        50364,
+        1484,
+        78,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.588744750389686,
+      "compression_ratio": 0.9333333333333333,
+      "no_speech_prob": 0.48781073093414307
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " humo",
+      "tokens": [
+        50464,
+        1484,
+        78,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.588744750389686,
+      "compression_ratio": 0.9333333333333333,
+      "no_speech_prob": 0.48781073093414307
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " humo",
+      "tokens": [
+        50564,
+        1484,
+        78,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.588744750389686,
+      "compression_ratio": 0.9333333333333333,
+      "no_speech_prob": 0.48781073093414307
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,30 @@
+{
+  "text": " Horario, horario, horario.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Horario, horario, horario.",
+      "tokens": [
+        50364,
+        10691,
+        4912,
+        11,
+        2569,
+        4912,
+        11,
+        2569,
+        4912,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6298383076985677,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.2711562514305115
+    }
+  ],
+  "language": "es"
+}

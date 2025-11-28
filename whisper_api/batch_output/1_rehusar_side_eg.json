@@ -1,0 +1,32 @@
+{
+  "text": " Reusar, Reusar, Reusar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Reusar, Reusar, Reusar",
+      "tokens": [
+        50364,
+        1300,
+        301,
+        289,
+        11,
+        1300,
+        301,
+        289,
+        11,
+        1300,
+        301,
+        289,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5048679964882987,
+      "compression_ratio": 1.2222222222222223,
+      "no_speech_prob": 0.5335772037506104
+    }
+  ],
+  "language": "es"
+}

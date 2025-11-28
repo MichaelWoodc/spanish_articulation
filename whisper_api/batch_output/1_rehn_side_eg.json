@@ -1,0 +1,60 @@
+{
+  "text": " re-en re-en re-en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " re-en",
+      "tokens": [
+        50364,
+        319,
+        12,
+        268,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47266653180122375,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.5727728009223938
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " re-en",
+      "tokens": [
+        50464,
+        319,
+        12,
+        268,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47266653180122375,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.5727728009223938
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " re-en",
+      "tokens": [
+        50564,
+        319,
+        12,
+        268,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.47266653180122375,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.5727728009223938
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,69 @@
+{
+  "text": " ¡HILARO! ¡HILARO! ¡HILARO!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " ¡HILARO!",
+      "tokens": [
+        50364,
+        6514,
+        39,
+        4620,
+        1899,
+        46,
+        0,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4502744293212891,
+      "compression_ratio": 1.380952380952381,
+      "no_speech_prob": 0.4009358584880829
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " ¡HILARO!",
+      "tokens": [
+        50464,
+        6514,
+        39,
+        4620,
+        1899,
+        46,
+        0,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4502744293212891,
+      "compression_ratio": 1.380952380952381,
+      "no_speech_prob": 0.4009358584880829
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " ¡HILARO!",
+      "tokens": [
+        50564,
+        6514,
+        39,
+        4620,
+        1899,
+        46,
+        0,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4502744293212891,
+      "compression_ratio": 1.380952380952381,
+      "no_speech_prob": 0.4009358584880829
+    }
+  ],
+  "language": "es"
+}

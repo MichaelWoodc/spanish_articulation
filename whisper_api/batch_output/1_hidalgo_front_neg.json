@@ -1,0 +1,24 @@
+{
+  "text": "ilinguista",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.26,
+      "text": "ilinguista",
+      "tokens": [
+        50364,
+        4883,
+        84,
+        5236,
+        50627
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.3635679880778,
+      "compression_ratio": 0.5555555555555556,
+      "no_speech_prob": 0.34397682547569275
+    }
+  ],
+  "language": "es"
+}

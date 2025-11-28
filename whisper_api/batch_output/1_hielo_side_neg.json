@@ -1,0 +1,30 @@
+{
+  "text": " Hi Yellow. Hi Yellow. Hi Yellow.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 8.0,
+      "text": " Hi Yellow. Hi Yellow. Hi Yellow.",
+      "tokens": [
+        50364,
+        2421,
+        17550,
+        13,
+        2421,
+        17550,
+        13,
+        2421,
+        17550,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7899200121561686,
+      "compression_ratio": 1.4545454545454546,
+      "no_speech_prob": 0.25598517060279846
+    }
+  ],
+  "language": "es"
+}

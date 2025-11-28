@@ -1,0 +1,35 @@
+{
+  "text": " A C JAR, A C JAR, A C JAR",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " A C JAR, A C JAR, A C JAR",
+      "tokens": [
+        50364,
+        316,
+        383,
+        508,
+        1899,
+        11,
+        316,
+        383,
+        508,
+        1899,
+        11,
+        316,
+        383,
+        508,
+        1899,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5267864115097943,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.1212235763669014
+    }
+  ],
+  "language": "es"
+}

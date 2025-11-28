@@ -1,0 +1,60 @@
+{
+  "text": " Huracán Huracán Huracán",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Huracán",
+      "tokens": [
+        50364,
+        8598,
+        326,
+        7200,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6710348725318909,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.20879726111888885
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " Huracán",
+      "tokens": [
+        50464,
+        8598,
+        326,
+        7200,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6710348725318909,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.20879726111888885
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Huracán",
+      "tokens": [
+        50564,
+        8598,
+        326,
+        7200,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6710348725318909,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.20879726111888885
+    }
+  ],
+  "language": "es"
+}

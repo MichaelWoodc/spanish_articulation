@@ -1,0 +1,27 @@
+{
+  "text": " rehen rehen rehen",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.640000000000001,
+      "text": " rehen rehen rehen",
+      "tokens": [
+        50364,
+        319,
+        2932,
+        319,
+        2932,
+        319,
+        2932,
+        50696
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7780389785766602,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.47377488017082214
+    }
+  ],
+  "language": "es"
+}

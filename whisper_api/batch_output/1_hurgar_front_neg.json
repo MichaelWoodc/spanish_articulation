@@ -1,0 +1,27 @@
+{
+  "text": " hergar hergar hergar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.140000000000001,
+      "text": " hergar hergar hergar",
+      "tokens": [
+        50364,
+        720,
+        2976,
+        720,
+        2976,
+        720,
+        2976,
+        50671
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7993553479512533,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.3685609698295593
+    }
+  ],
+  "language": "es"
+}

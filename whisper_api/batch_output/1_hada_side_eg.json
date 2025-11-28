@@ -1,0 +1,28 @@
+{
+  "text": " Ata, ata, ata.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Ata, ata, ata.",
+      "tokens": [
+        50364,
+        316,
+        1328,
+        11,
+        48639,
+        11,
+        48639,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8983298301696777,
+      "compression_ratio": 0.875,
+      "no_speech_prob": 0.6365700364112854
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,30 @@
+{
+  "text": " jayelo jayelo jayelo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.92,
+      "text": " jayelo jayelo jayelo",
+      "tokens": [
+        50364,
+        361,
+        320,
+        10590,
+        361,
+        320,
+        10590,
+        361,
+        320,
+        10590,
+        50760
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.9834125836690267,
+      "compression_ratio": 1.1764705882352942,
+      "no_speech_prob": 0.27196353673934937
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,30 @@
+{
+  "text": " Vaya, vaya, vaya.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.5,
+      "text": " Vaya, vaya, vaya.",
+      "tokens": [
+        50364,
+        691,
+        4427,
+        11,
+        371,
+        4427,
+        11,
+        371,
+        4427,
+        13,
+        50539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5921153624852499,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.424487829208374
+    }
+  ],
+  "language": "es"
+}

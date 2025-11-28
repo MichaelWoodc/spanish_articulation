@@ -1,0 +1,27 @@
+{
+  "text": " hiergar hiergar hiergar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.5600000000000005,
+      "text": " hiergar hiergar hiergar",
+      "tokens": [
+        50364,
+        3296,
+        2976,
+        3296,
+        2976,
+        3296,
+        2976,
+        50692
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7658102247450087,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.36675170063972473
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,30 @@
+{
+  "text": " Ahi, ahi, ahi.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Ahi, ahi, ahi.",
+      "tokens": [
+        50364,
+        2438,
+        72,
+        11,
+        3716,
+        72,
+        11,
+        3716,
+        72,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4689871072769165,
+      "compression_ratio": 0.875,
+      "no_speech_prob": 0.1579076200723648
+    }
+  ],
+  "language": "es"
+}

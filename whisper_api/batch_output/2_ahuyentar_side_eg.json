@@ -1,0 +1,33 @@
+{
+  "text": " Al duchar, al duchar, al duchar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Al duchar, al duchar, al duchar.",
+      "tokens": [
+        50364,
+        967,
+        274,
+        31084,
+        11,
+        419,
+        274,
+        31084,
+        11,
+        419,
+        274,
+        31084,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6832817713419597,
+      "compression_ratio": 1.391304347826087,
+      "no_speech_prob": 0.1704772412776947
+    }
+  ],
+  "language": "es"
+}

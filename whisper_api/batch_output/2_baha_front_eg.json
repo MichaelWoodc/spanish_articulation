@@ -1,0 +1,30 @@
+{
+  "text": " Vaya, bahía, bahía.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Vaya, bahía, bahía.",
+      "tokens": [
+        50364,
+        691,
+        4427,
+        11,
+        12913,
+        2686,
+        11,
+        12913,
+        2686,
+        13,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5903877019882202,
+      "compression_ratio": 0.9545454545454546,
+      "no_speech_prob": 0.2879807651042938
+    }
+  ],
+  "language": "es"
+}

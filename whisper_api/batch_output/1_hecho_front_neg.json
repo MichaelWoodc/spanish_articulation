@@ -1,0 +1,27 @@
+{
+  "text": " hecho hecho hecho",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.88,
+      "text": " hecho hecho hecho",
+      "tokens": [
+        50364,
+        415,
+        5738,
+        415,
+        5738,
+        415,
+        5738,
+        50758
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9029082192314996,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.5249437689781189
+    }
+  ],
+  "language": "es"
+}

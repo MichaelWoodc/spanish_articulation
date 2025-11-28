@@ -1,0 +1,30 @@
+{
+  "text": " Bua, bua, bua.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.5,
+      "text": " Bua, bua, bua.",
+      "tokens": [
+        50364,
+        4078,
+        64,
+        11,
+        758,
+        64,
+        11,
+        758,
+        64,
+        13,
+        50539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5528016487757365,
+      "compression_ratio": 0.875,
+      "no_speech_prob": 0.3704349994659424
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,32 @@
+{
+  "text": " Huracán, huracán, huracán",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Huracán, huracán, huracán",
+      "tokens": [
+        50364,
+        8598,
+        326,
+        7200,
+        11,
+        2756,
+        326,
+        7200,
+        11,
+        2756,
+        326,
+        7200,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5482826232910156,
+      "compression_ratio": 1.3333333333333333,
+      "no_speech_prob": 0.24811379611492157
+    }
+  ],
+  "language": "es"
+}

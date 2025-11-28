@@ -1,0 +1,31 @@
+{
+  "text": " Adherir, adherir, adherir.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Adherir, adherir, adherir.",
+      "tokens": [
+        50364,
+        1999,
+        511,
+        347,
+        11,
+        30106,
+        347,
+        11,
+        30106,
+        347,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4781650396493765,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.13800716400146484
+    }
+  ],
+  "language": "es"
+}

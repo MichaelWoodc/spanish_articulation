@@ -1,0 +1,63 @@
+{
+  "text": " URGAR URGAR URGAR",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " URGAR",
+      "tokens": [
+        50364,
+        624,
+        49,
+        38,
+        1899,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39208680705020305,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.658531665802002
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " URGAR",
+      "tokens": [
+        50464,
+        624,
+        49,
+        38,
+        1899,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39208680705020305,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.658531665802002
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " URGAR",
+      "tokens": [
+        50564,
+        624,
+        49,
+        38,
+        1899,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.39208680705020305,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.658531665802002
+    }
+  ],
+  "language": "es"
+}

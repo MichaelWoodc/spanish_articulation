@@ -1,0 +1,30 @@
+{
+  "text": " y dalgo y dalgo y dalgo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.1000000000000005,
+      "text": " y dalgo y dalgo y dalgo",
+      "tokens": [
+        50364,
+        288,
+        11702,
+        1571,
+        288,
+        11702,
+        1571,
+        288,
+        11702,
+        1571,
+        50719
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5949644247690836,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.46084320545196533
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,33 @@
+{
+  "text": " Rehusar, rehusar, rehusar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Rehusar, rehusar, rehusar.",
+      "tokens": [
+        50364,
+        1300,
+        10846,
+        289,
+        11,
+        319,
+        10846,
+        289,
+        11,
+        319,
+        10846,
+        289,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.49842726389567055,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.6238367557525635
+    }
+  ],
+  "language": "es"
+}

@@ -49,3 +49,112 @@ filename,transcript,time_seconds,file_duration_seconds,speed_score,device_used,f
 1_exhalo_front_eg.mp4,Exhalo. Exhalo. Exhalo.,12.67,6.20,0.49,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:57:32
 1_exhalo_front_neg.mp4,"exhaleo, exhaleo, exhaleo",4.35,6.29,1.45,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:57:37
 1_exhalo_side_eg.mp4,"exhalo, exhalo, exhalo",4.54,6.29,1.39,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:57:41
+1_exhalo_side_neg.mp4,"exhalo, exhalo, exhalo",12.55,6.13,0.49,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:57:54
+1_hablar_front_eg.mp4,"Hablar, hablar, hablar",4.23,6.94,1.64,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:57:58
+1_hablar_front_neg.mp4,"Hablar, hablar, hablar",4.24,6.66,1.57,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:03
+1_hablar_side_eg.mp4,"Hablar, hablar, hablar",4.23,7.55,1.78,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:07
+1_hablar_side_neg.mp4,"Hablar, hablar, hablar",4.24,7.11,1.68,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:11
+1_hacer_front_eg.mp4,"hacer, hacer, hacer",4.17,7.59,1.82,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:16
+1_hacer_front_neg.mp4,¡Hacer!,4.10,7.01,1.71,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:20
+1_hacer_side_eg.mp4,"hacer, hacer, hacer",4.17,7.99,1.92,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:24
+1_hacer_side_neg.mp4,"¡Hey, sir!",4.17,7.36,1.77,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:28
+1_hada_front_eg.mp4,"A ver, a ver, a ver.",4.41,4.37,0.99,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:33
+1_hada_front_neg.mp4,"Hater, hater, hater",4.34,4.74,1.09,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:37
+1_hada_side_eg.mp4,"Ata, ata, ata.",4.28,6.20,1.45,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:41
+1_hada_side_neg.mp4,"Heyda, heyda, heyda.",4.42,5.60,1.27,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:46
+1_hecho_front_eg.mp4,"hecho, hecho, hecho",4.18,7.31,1.75,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:50
+1_hecho_front_neg.mp4,hecho hecho hecho,4.27,7.38,1.73,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:55
+1_hecho_side_eg.mp4,"hecho, hecho, hecho",4.34,8.01,1.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:58:59
+1_hecho_side_neg.mp4,hecho hecho hecho,4.34,7.66,1.76,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:03
+1_helado_front_eg.mp4,el lado el lado el lado,4.43,6.97,1.57,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:08
+1_helado_front_neg.mp4,¡HILARO! ¡HILARO! ¡HILARO!,5.52,6.92,1.25,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:14
+1_helado_side_eg.mp4,el lado el lado el lado,4.51,7.87,1.75,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:18
+1_helado_side_neg.mp4,"Jilero, jilero, jilero.",4.78,7.29,1.53,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:23
+1_hembra_front_eg.mp4,"Embra, embra, embra.",4.53,4.57,1.01,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:28
+1_hembra_front_neg.mp4,hembra hembra hembra,4.44,4.78,1.08,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:32
+1_hembra_side_eg.mp4,Embra... Embra... Embra...,4.48,5.83,1.30,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:37
+1_hembra_side_neg.mp4,"Hembra, hembra, hembra.",4.52,5.80,1.29,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:41
+1_hidalgo_front_eg.mp4,y dalgo y dalgo y dalgo,4.47,5.80,1.30,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 17:59:46
+1_hidalgo_front_neg.mp4,ilinguista,25.67,5.29,0.21,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:12
+1_hidalgo_side_eg.mp4,y dalgo y dalgo y dalgo,4.42,5.62,1.27,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:16
+1_hidalgo_side_neg.mp4,"¡Hidalgo, Hidalgo, Hidalgo!",17.09,5.59,0.33,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:33
+1_hielo_front_eg.mp4,hielo hielo hielo,4.40,6.22,1.42,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:38
+1_hielo_front_neg.mp4,jayelo jayelo jayelo,12.59,7.17,0.57,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:50
+1_hielo_side_eg.mp4,Hielo Hielo Hielo,4.71,6.92,1.47,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:00:55
+1_hielo_side_neg.mp4,Hi Yellow. Hi Yellow. Hi Yellow.,4.55,6.62,1.45,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:00
+1_historia_front_eg.mp4,historia historia historia,4.33,8.38,1.94,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:04
+1_historia_front_neg.mp4,"Historia, Historia, Historia",4.36,7.48,1.71,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:09
+1_historia_side_eg.mp4,historia historia historia,4.14,8.43,2.04,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:13
+1_historia_side_neg.mp4,"Historia, Historia, Historia",4.44,8.41,1.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:17
+1_hoja_front_eg.mp4,oja oja oja,4.29,6.85,1.60,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:22
+1_hoja_front_neg.mp4,"Hoja, hoja, hoja.",4.46,6.75,1.51,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:26
+1_hoja_side_eg.mp4,oja oja oja,4.29,7.19,1.68,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:31
+1_hoja_side_neg.mp4,"Jodia, jodia, jodia.",13.06,6.97,0.53,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:44
+1_horario_front_eg.mp4,horario,4.05,7.34,1.81,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:48
+1_horario_front_neg.mp4,"Horario, Horario, Horario",4.41,7.43,1.68,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:52
+1_horario_side_eg.mp4,Horario,4.04,7.08,1.75,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:01:57
+1_horario_side_neg.mp4,"Horario, horario, horario.",4.47,8.13,1.82,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:01
+1_hotel_front_eg.mp4,Hotel Hotel Hotel,4.33,5.67,1.31,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:06
+1_hotel_front_neg.mp4,"Hotel, hotel, hotel.",4.28,5.43,1.27,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:10
+1_hotel_side_eg.mp4,"Hotel, hotel, hotel.",4.29,5.12,1.19,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:14
+1_hotel_side_neg.mp4,"Hotel, hotel, hotel.",4.29,5.43,1.27,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:19
+1_humo_front_eg.mp4,"humo, humo, humo",4.40,8.10,1.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:23
+1_humo_front_neg.mp4,"humo, humo, humo",4.45,6.15,1.38,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:28
+1_humo_side_eg.mp4,humo humo humo,4.75,7.59,1.60,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:32
+1_humo_side_neg.mp4,"humo, humo, humo",4.48,6.99,1.56,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:37
+1_huracn_front_eg.mp4,Uda Khan Uda Khan Uda Khan,9.02,8.56,0.95,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:46
+1_huracn_front_neg.mp4,"Huracán, huracán, huracán",4.64,7.01,1.51,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:51
+1_huracn_side_eg.mp4,huracán huracán huracán,4.57,8.10,1.77,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:02:56
+1_huracn_side_neg.mp4,Huracán Huracán Huracán,4.72,8.82,1.87,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:00
+1_hurgar_front_eg.mp4,URGAR URGAR URGAR,4.87,5.55,1.14,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:05
+1_hurgar_front_neg.mp4,hergar hergar hergar,4.30,4.80,1.12,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:10
+1_hurgar_side_eg.mp4,"Urgar, urgar, urgar.",4.43,5.57,1.26,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:14
+1_hurgar_side_neg.mp4,hiergar hiergar hiergar,4.25,5.22,1.23,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:18
+1_rehn_front_eg.mp4,re en re en re en,4.23,5.57,1.32,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:23
+1_rehn_front_neg.mp4,rehen rehen rehen,4.41,5.55,1.26,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:27
+1_rehn_side_eg.mp4,re-en re-en re-en,4.69,5.48,1.17,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:32
+1_rehn_side_neg.mp4,"Rígen, Rígen, Rígen.",4.61,5.22,1.13,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:37
+1_rehusar_front_eg.mp4,"Rehusar, rehusar, rehusar.",4.59,5.85,1.27,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:41
+1_rehusar_front_neg.mp4,rehúsar rehúsar rehúsar,4.61,5.22,1.13,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:46
+1_rehusar_side_eg.mp4,"Reusar, Reusar, Reusar",4.55,5.80,1.28,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:51
+1_rehusar_side_neg.mp4,rehúsar rehúsar rehúsar,4.41,6.34,1.44,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:03:55
+2_adher_front_eg.mp4,"Aderim, aderim, aderim.",4.59,3.62,0.79,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:00
+2_adher_front_neg.mp4,"Adherir, adherir, adherir.",4.47,3.99,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:04
+2_adher_side_eg.mp4,"A ver, a ver, a ver...",4.43,3.85,0.87,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:09
+2_adher_side_neg.mp4,"Aheri, aheri, aheri.",4.60,4.04,0.88,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:14
+2_ah_front_eg.mp4,"Ahí, ahí, ahí.",4.26,3.55,0.83,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:18
+2_ah_front_neg.mp4,"Ahi, ahi, ahi.",4.41,3.13,0.71,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:23
+2_ah_side_eg.mp4,"Ahí, ahí, ahí.",4.22,3.55,0.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:27
+2_ah_side_neg.mp4,"Ahi, ahi, ahi.",4.41,4.13,0.94,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:31
+2_ahora_front_eg.mp4,"Ahora, ahora, ahora.",4.23,3.71,0.88,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:36
+2_ahora_front_neg.mp4,"Ahorra, ahorra, ahorra.",4.59,3.83,0.83,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:40
+2_ahora_side_eg.mp4,"Ahora, ahora, ahora.",4.23,3.79,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:45
+2_ahora_side_neg.mp4,"Ahorra, ahorra, ahorra.",4.62,3.76,0.81,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:49
+2_ahumado_front_eg.mp4,"Armado, armado, armado.",4.45,3.97,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:54
+2_ahumado_front_neg.mp4,"Ahumado, ahumado, ahumado.",4.73,4.11,0.87,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:04:59
+2_ahumado_side_eg.mp4,"Aumado, Aumado, Aumado.",4.64,3.99,0.86,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:03
+2_ahumado_side_neg.mp4,"Ahumado, ahumado, ahumado.",4.59,4.27,0.93,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:08
+2_ahuyentar_front_eg.mp4,"Auxentar, ausentar, ausentar.",4.48,4.41,0.99,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:13
+2_ahuyentar_front_neg.mp4,"Ahuy Gentar, Ahuy Gentar, Ahuy Gentar.",4.77,4.60,0.96,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:17
+2_ahuyentar_side_eg.mp4,"Al duchar, al duchar, al duchar.",4.59,3.99,0.87,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:22
+2_ahuyentar_side_neg.mp4,"Aju Gentar, Aju Gentar, Aju Gentar.",9.00,4.50,0.50,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:31
+2_alcohol_front_eg.mp4,alcohol alcohol alcohol,4.05,3.99,0.99,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:35
+2_alcohol_front_neg.mp4,alcohol alcohol alcohol,4.04,3.92,0.97,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:39
+2_alcohol_side_eg.mp4,"alcohol, alcohol, alcohol",4.16,3.48,0.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:44
+2_alcohol_side_neg.mp4,alcohol alcohol alcohol,4.04,3.88,0.96,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:48
+2_almohada_front_eg.mp4,"almohada, almohada, almohada.",4.58,4.27,0.93,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:52
+2_almohada_front_neg.mp4,"Al mojada, al mojada, al mojada",4.72,4.20,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:05:57
+2_almohada_side_eg.mp4,"almohada, almohada, almohada",4.56,4.08,0.90,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:02
+2_almohada_side_neg.mp4,"Amor hara, amor hara, amor hara.",4.65,3.92,0.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:07
+2_azahar_front_eg.mp4,"Asar, asar, asar",4.35,3.67,0.84,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:11
+2_azahar_front_neg.mp4,"Sahar, Sahar, Sahar.",4.42,4.25,0.96,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:16
+2_azahar_side_eg.mp4,"Asar, asar, asar.",4.43,4.16,0.94,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:20
+2_azahar_side_neg.mp4,"A C JAR, A C JAR, A C JAR",4.74,4.23,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:25
+2_baha_front_eg.mp4,"Vaya, bahía, bahía.",4.41,4.09,0.93,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:29
+2_baha_front_neg.mp4,"Vájia, vájia, vájia.",4.66,3.41,0.73,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:34
+2_baha_side_eg.mp4,"Vaya, vaya, vaya.",4.41,3.67,0.83,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:39
+2_baha_side_neg.mp4,"Bahía, bahía, bahía.",4.42,3.92,0.89,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:43
+2_bho_front_eg.mp4,"Bua, bua, bua.",4.52,3.44,0.76,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:48
+2_bho_front_neg.mp4,"Bujo, bujo, bujo.",4.64,3.67,0.79,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:52
+2_bho_side_eg.mp4,"Bua, bua, bua.",4.65,3.53,0.76,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:06:57
+2_bho_side_neg.mp4,"BYUHO, BYUHO, BYUHO",4.78,3.55,0.74,"GPU (NVIDIA T1000 8GB, Driver 580.97, CUDA 12.1)",2025-11-28 18:07:02

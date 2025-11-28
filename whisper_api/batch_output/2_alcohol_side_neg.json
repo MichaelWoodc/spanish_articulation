@@ -1,0 +1,24 @@
+{
+  "text": " alcohol alcohol alcohol",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.5,
+      "text": " alcohol alcohol alcohol",
+      "tokens": [
+        50364,
+        7658,
+        7658,
+        7658,
+        50639
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7748742898305258,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.1352677047252655
+    }
+  ],
+  "language": "es"
+}

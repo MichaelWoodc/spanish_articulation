@@ -1,0 +1,30 @@
+{
+  "text": " Hembra, hembra, hembra.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Hembra, hembra, hembra.",
+      "tokens": [
+        50364,
+        18568,
+        6198,
+        11,
+        8636,
+        6198,
+        11,
+        8636,
+        6198,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6897969245910645,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.3715066611766815
+    }
+  ],
+  "language": "es"
+}

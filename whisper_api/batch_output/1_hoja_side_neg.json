@@ -1,0 +1,33 @@
+{
+  "text": " Jodia, jodia, jodia.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Jodia, jodia, jodia.",
+      "tokens": [
+        50364,
+        508,
+        378,
+        654,
+        11,
+        361,
+        378,
+        654,
+        11,
+        361,
+        378,
+        654,
+        13,
+        50714
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.7659580866495769,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.42410457134246826
+    }
+  ],
+  "language": "es"
+}

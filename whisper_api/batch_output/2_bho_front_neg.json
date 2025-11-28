@@ -1,0 +1,30 @@
+{
+  "text": " Bujo, bujo, bujo.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.64,
+      "text": " Bujo, bujo, bujo.",
+      "tokens": [
+        50364,
+        4078,
+        5134,
+        11,
+        758,
+        5134,
+        11,
+        758,
+        5134,
+        13,
+        50546
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5574319760004679,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.15956716239452362
+    }
+  ],
+  "language": "es"
+}

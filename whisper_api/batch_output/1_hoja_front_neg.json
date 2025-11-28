@@ -1,0 +1,30 @@
+{
+  "text": " Hoja, hoja, hoja.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Hoja, hoja, hoja.",
+      "tokens": [
+        50364,
+        3631,
+        2938,
+        11,
+        1106,
+        2938,
+        11,
+        1106,
+        2938,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6411919593811035,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.2581278383731842
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,54 @@
+{
+  "text": " Hotel Hotel Hotel",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Hotel",
+      "tokens": [
+        50364,
+        20354,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6453745841979981,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.616344153881073
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " Hotel",
+      "tokens": [
+        50464,
+        20354,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6453745841979981,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.616344153881073
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Hotel",
+      "tokens": [
+        50564,
+        20354,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6453745841979981,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.616344153881073
+    }
+  ],
+  "language": "es"
+}

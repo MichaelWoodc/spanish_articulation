@@ -1,0 +1,30 @@
+{
+  "text": " A ver, a ver, a ver.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " A ver, a ver, a ver.",
+      "tokens": [
+        50364,
+        316,
+        1306,
+        11,
+        257,
+        1306,
+        11,
+        257,
+        1306,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7605005900065104,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.5283432602882385
+    }
+  ],
+  "language": "es"
+}

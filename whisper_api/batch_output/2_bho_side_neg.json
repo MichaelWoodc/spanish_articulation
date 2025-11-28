@@ -1,0 +1,32 @@
+{
+  "text": " BYUHO, BYUHO, BYUHO",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.5,
+      "text": " BYUHO, BYUHO, BYUHO",
+      "tokens": [
+        50364,
+        363,
+        19280,
+        22585,
+        11,
+        363,
+        19280,
+        22585,
+        11,
+        363,
+        19280,
+        22585,
+        50539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6667581966945103,
+      "compression_ratio": 1.1176470588235294,
+      "no_speech_prob": 0.188410222530365
+    }
+  ],
+  "language": "es"
+}

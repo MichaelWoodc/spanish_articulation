@@ -1,0 +1,30 @@
+{
+  "text": " Armado, armado, armado.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Armado, armado, armado.",
+      "tokens": [
+        50364,
+        11893,
+        1573,
+        11,
+        3726,
+        1573,
+        11,
+        3726,
+        1573,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5453634262084961,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.1366555541753769
+    }
+  ],
+  "language": "es"
+}

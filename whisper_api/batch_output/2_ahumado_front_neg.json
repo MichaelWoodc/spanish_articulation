@@ -1,0 +1,33 @@
+{
+  "text": " Ahumado, ahumado, ahumado.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Ahumado, ahumado, ahumado.",
+      "tokens": [
+        50364,
+        2438,
+        449,
+        1573,
+        11,
+        3716,
+        449,
+        1573,
+        11,
+        3716,
+        449,
+        1573,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.34736270904541017,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.16733714938163757
+    }
+  ],
+  "language": "es"
+}

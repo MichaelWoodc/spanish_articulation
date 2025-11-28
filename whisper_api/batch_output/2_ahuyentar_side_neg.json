@@ -1,0 +1,36 @@
+{
+  "text": " Aju Gentar, Aju Gentar, Aju Gentar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.34,
+      "text": " Aju Gentar, Aju Gentar, Aju Gentar.",
+      "tokens": [
+        50364,
+        316,
+        8954,
+        33070,
+        289,
+        11,
+        316,
+        8954,
+        33070,
+        289,
+        11,
+        316,
+        8954,
+        33070,
+        289,
+        13,
+        50581
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.6359762615627713,
+      "compression_ratio": 1.4583333333333333,
+      "no_speech_prob": 0.25399601459503174
+    }
+  ],
+  "language": "es"
+}

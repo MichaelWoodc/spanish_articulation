@@ -1,0 +1,29 @@
+{
+  "text": " Hater, hater, hater",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.7,
+      "text": " Hater, hater, hater",
+      "tokens": [
+        50364,
+        389,
+        771,
+        11,
+        276,
+        771,
+        11,
+        276,
+        771,
+        50599
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6785794171420011,
+      "compression_ratio": 1.1176470588235294,
+      "no_speech_prob": 0.38986608386039734
+    }
+  ],
+  "language": "es"
+}

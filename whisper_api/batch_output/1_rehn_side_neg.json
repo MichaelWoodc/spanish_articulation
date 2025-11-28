@@ -1,0 +1,33 @@
+{
+  "text": " Rígen, Rígen, Rígen.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Rígen, Rígen, Rígen.",
+      "tokens": [
+        50364,
+        497,
+        870,
+        1766,
+        11,
+        497,
+        870,
+        1766,
+        11,
+        497,
+        870,
+        1766,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6691707611083985,
+      "compression_ratio": 1.15,
+      "no_speech_prob": 0.4533681273460388
+    }
+  ],
+  "language": "es"
+}

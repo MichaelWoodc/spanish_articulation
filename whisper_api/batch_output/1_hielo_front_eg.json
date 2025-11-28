@@ -1,0 +1,30 @@
+{
+  "text": " hielo hielo hielo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.1000000000000005,
+      "text": " hielo hielo hielo",
+      "tokens": [
+        50364,
+        276,
+        1187,
+        78,
+        276,
+        1187,
+        78,
+        276,
+        1187,
+        78,
+        50719
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4202813307444255,
+      "compression_ratio": 1.0625,
+      "no_speech_prob": 0.33938056230545044
+    }
+  ],
+  "language": "es"
+}

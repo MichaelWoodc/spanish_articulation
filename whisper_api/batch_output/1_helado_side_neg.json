@@ -1,0 +1,33 @@
+{
+  "text": " Jilero, jilero, jilero.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Jilero, jilero, jilero.",
+      "tokens": [
+        50364,
+        508,
+        388,
+        2032,
+        11,
+        361,
+        388,
+        2032,
+        11,
+        361,
+        388,
+        2032,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7349904378255209,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.32619622349739075
+    }
+  ],
+  "language": "es"
+}

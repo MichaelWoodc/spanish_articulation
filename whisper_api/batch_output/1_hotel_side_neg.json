@@ -1,0 +1,27 @@
+{
+  "text": " Hotel, hotel, hotel.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Hotel, hotel, hotel.",
+      "tokens": [
+        50364,
+        20354,
+        11,
+        7622,
+        11,
+        7622,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.680708991156684,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.19234512746334076
+    }
+  ],
+  "language": "es"
+}

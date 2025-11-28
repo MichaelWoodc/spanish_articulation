@@ -1,0 +1,30 @@
+{
+  "text": " Embra, embra, embra.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Embra, embra, embra.",
+      "tokens": [
+        50364,
+        3968,
+        6198,
+        11,
+        846,
+        6198,
+        11,
+        846,
+        6198,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7476377487182617,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.4481786787509918
+    }
+  ],
+  "language": "es"
+}

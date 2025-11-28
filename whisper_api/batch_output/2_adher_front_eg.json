@@ -1,0 +1,33 @@
+{
+  "text": " Aderim, aderim, aderim.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.5,
+      "text": " Aderim, aderim, aderim.",
+      "tokens": [
+        50364,
+        1999,
+        260,
+        332,
+        11,
+        614,
+        260,
+        332,
+        11,
+        614,
+        260,
+        332,
+        13,
+        50539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5121847788492838,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.3652315139770508
+    }
+  ],
+  "language": "es"
+}

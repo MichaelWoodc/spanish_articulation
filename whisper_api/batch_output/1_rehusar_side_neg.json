@@ -1,0 +1,30 @@
+{
+  "text": " rehúsar rehúsar rehúsar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.44,
+      "text": " rehúsar rehúsar rehúsar",
+      "tokens": [
+        50364,
+        22355,
+        10227,
+        289,
+        22355,
+        10227,
+        289,
+        22355,
+        10227,
+        289,
+        50736
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.664172887802124,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.3946992754936218
+    }
+  ],
+  "language": "es"
+}
