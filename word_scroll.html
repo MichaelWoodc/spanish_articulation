@@ -382,10 +382,15 @@ function startNewBatchRecording() {
   if (mediaStream) {
     // Use FFmpeg-compatible formats in priority order
     const formatPriority = [
-      'audio/webm;codecs=opus',    // Opus in WebM container (FFmpeg compatible)
-      'audio/mp4',                 // AAC in MP4 container (FFmpeg compatible)  
-      'audio/webm',                // Fallback WebM
+      'audio/wav',                 // PCM WAV (easy for Whisper)
+      'audio/webm;codecs=opus',    // fallback
+      'audio/mp4'
     ];
+    // const formatPriority = [
+    //   'audio/webm;codecs=opus',    // Opus in WebM container (FFmpeg compatible)
+    //   'audio/mp4',                 // AAC in MP4 container (FFmpeg compatible)  
+    //   'audio/webm',                // Fallback WebM
+    // ];
     
     let selectedFormat = '';
     for (const format of formatPriority) {
