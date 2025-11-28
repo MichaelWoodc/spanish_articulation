@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription Table Debugger</title>
+    <style>
+        body {
+            background: #0b0b0b;
+            color: #fff;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+        }
+        
+        .transcription-table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .transcription-table th,
+        .transcription-table td {
+            border: 1px solid #444;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .transcription-table th {
+            background: rgba(255,165,0,0.2);
+            color: #ffa500;
+        }
+        
+        .transcription-table .word-cell {
+            min-width: 100px;
+        }
+        
+        .transcription-table .time-cell {
+            min-width: 80px;
+            font-family: monospace;
+        }
+        
+        .batch-score {
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .score-perfect {
+            background: rgba(0, 255, 0, 0.2);
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        
+        .score-good {
+            background: rgba(255, 255, 0, 0.2);
+            color: #FFC107;
+            border: 1px solid #FFC107;
+        }
+        
+        .score-poor {
+            background: rgba(255, 0, 0, 0.2);
+            color: #F44336;
+            border: 1px solid #F44336;
+        }
+        
+        button {
+            background: #ffa500;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #ffb732;
+        }
+        
+        .full-transcription {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #ffa500;
+        }
+        
+        .debug-info {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 14px;
+            border: 1px solid #444;
+        }
+        
+        h1, h2, h3 {
+            color: #ffa500;
+            margin-top: 0;
+        }
+        
+        .correct-row {
+            background: rgba(0, 255, 0, 0.1) !important;
+        }
+        
+        .incorrect-row {
+            background: rgba(255, 0, 0, 0.1) !important;
+        }
+        
+        .missing-row {
+            background: rgba(128, 128, 128, 0.1) !important;
+        }
+        
+        .extra-row {
+            background: rgba(255, 165, 0, 0.1) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Transcription Table Debugger</h1>
+        
+        <div class="section">
+            <h3>Expected Words (from filename: batch_1_adher_ah_ahora_ahumado_ahuyentar)</h3>
+            <div class="debug-info">
+                <strong>Expected words parsed from filename:</strong><br>
+                adher, ah, ahora, ahumado, ahuyentar
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Transcription Results</h3>
+            <button onclick="createTable()">Generate Scoring Table</button>
+            
+            <div id="resultsSection">
+                <!-- Results will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // The transcription data you provided
+        const transcriptionData = {
+            "text": "Adhe, ah ahora, ayumado, ayumentar.",
+            "segments": [
+                {
+                    "id": 0,
+                    "seek": 0,
+                    "start": 0.0,
+                    "end": 5.02,
+                    "text": " Adhe, ah ahora, ayumado, ayumentar.",
+                    "tokens": [50364, 1999, 675, 11, 3716, 9923, 11, 7494, 449, 1573, 11, 7494, 2206, 289, 13, 50608],
+                    "temperature": 0.0,
+                    "avg_logprob": -0.6732378005981445,
+                    "compression_ratio": 0.9722222222222222,
+                    "no_speech_prob": 0.37012752890586853,
+                    "words": [
+                        {"word": " Adhe,", "start": 0.0, "end": 1.66, "probability": 0.35202476382255554},
+                        {"word": " ah", "start": 1.86, "end": 2.34, "probability": 0.5687678456306458},
+                        {"word": " ahora,", "start": 2.34, "end": 3.0, "probability": 0.4865033030509949},
+                        {"word": " ayumado,", "start": 3.56, "end": 4.18, "probability": 0.6947427988052368},
+                        {"word": " ayumentar.", "start": 4.46, "end": 5.02, "probability": 0.8524976372718811}
+                    ]
+                }
+            ]
+        };
+
+        // Expected words from the filename
+        const expectedWords = ["adher", "ah", "ahora", "ahumado", "ahuyentar"];
+
+        // Word definitions for scoring
+        const wordData = [
+            {
+                "word": "adher",
+                "correct": ["aderri"],
+                "incorrect": ["adhirre"]
+            },
+            {
+                "word": "ah", 
+                "correct": ["ahi"],
+                "incorrect": ["oji", "aji"]
+            },
+            {
+                "word": "ahora",
+                "correct": ["ahora"],
+                "incorrect": ["ajoora"]
+            },
+            {
+                "word": "ahumado",
+                "correct": ["aumago", "ayúdame"],
+                "incorrect": ["ehumado", ".*muñecito.*"]
+            },
+            {
+                "word": "ahuyentar", 
+                "correct": ["a urgentar"],
+                "incorrect": ["a hugh gentor", "ajujentar"]
+            }
+        ];
+
+        function createTable() {
+            // Extract ALL transcribed words in order
+            const allTranscribedWords = [];
+            transcriptionData.segments.forEach(segment => {
+                if (segment.words && Array.isArray(segment.words)) {
+                    segment.words.forEach(word => {
+                        allTranscribedWords.push({
+                            word: word.word ? word.word.trim() : "",
+                            start: word.start || 0,
+                            end: word.end || 0,
+                            confidence: word.probability || 0
+                        });
+                    });
+                }
+            });
+
+            console.log('Expected words:', expectedWords);
+            console.log('Transcribed words:', allTranscribedWords.map(w => w.word));
+
+            // Create results container
+            const resultsSection = document.getElementById('resultsSection');
+            resultsSection.innerHTML = '';
+
+            // Create table
+            const table = document.createElement('table');
+            table.className = 'transcription-table';
+            
+            // Create header
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>#</th>
+                    <th>Expected Word</th>
+                    <th>You Pronounced</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Confidence</th>
+                    <th>Result</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+            
+            // Create body
+            const tbody = document.createElement('tbody');
+            let correctCount = 0;
+            
+            // Match expected words with transcribed words by order
+            expectedWords.forEach((expectedWord, index) => {
+                const transcribedWord = allTranscribedWords[index] || { 
+                    word: "—", start: 0, end: 0, confidence: 0 
+                };
+                
+                const evaluation = evaluateTranscription(transcribedWord.word, expectedWord);
+                
+                if (evaluation.correct) {
+                    correctCount++;
+                }
+                
+                const row = document.createElement('tr');
+                const confidence = transcribedWord.confidence > 0 
+                    ? (transcribedWord.confidence * 100).toFixed(1) + "%" 
+                    : "N/A";
+                
+                row.innerHTML = `
+                    <td class="time-cell">${index + 1}</td>
+                    <td class="word-cell"><strong>${expectedWord}</strong></td>
+                    <td class="word-cell">${transcribedWord.word}</td>
+                    <td class="time-cell">${transcribedWord.start ? transcribedWord.start.toFixed(2) + "s" : "—"}</td>
+                    <td class="time-cell">${transcribedWord.end ? transcribedWord.end.toFixed(2) + "s" : "—"}</td>
+                    <td class="time-cell">${confidence}</td>
+                    <td class="word-cell">${evaluation.correct ? "✅" : "❌"}</td>
+                `;
+                
+                // Style based on result
+                if (evaluation.correct) {
+                    row.classList.add('correct-row');
+                } else if (transcribedWord.word === "—") {
+                    row.classList.add('missing-row');
+                } else {
+                    row.classList.add('incorrect-row');
+                }
+                
+                row.title = evaluation.message;
+                tbody.appendChild(row);
+            });
+            
+            // Add extra transcribed words that don't match expected words
+            if (allTranscribedWords.length > expectedWords.length) {
+                for (let i = expectedWords.length; i < allTranscribedWords.length; i++) {
+                    const transcribed = allTranscribedWords[i];
+                    const row = document.createElement('tr');
+                    const confidence = transcribed.confidence > 0 
+                        ? (transcribed.confidence * 100).toFixed(1) + "%" 
+                        : "N/A";
+                    
+                    row.innerHTML = `
+                        <td class="time-cell">—</td>
+                        <td class="word-cell">—</td>
+                        <td class="word-cell">${transcribed.word}</td>
+                        <td class="time-cell">${transcribed.start ? transcribed.start.toFixed(2) + "s" : "—"}</td>
+                        <td class="time-cell">${transcribed.end ? transcribed.end.toFixed(2) + "s" : "—"}</td>
+                        <td class="time-cell">${confidence}</td>
+                        <td class="word-cell">—</td>
+                    `;
+                    
+                    row.classList.add('extra-row');
+                    row.title = "Extra word not in expected list";
+                    tbody.appendChild(row);
+                }
+            }
+            
+            table.appendChild(tbody);
+
+            // Calculate score
+            const accuracy = expectedWords.length > 0 
+                ? (correctCount / expectedWords.length) * 100 
+                : 0;
+            
+            // Display score
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'batch-score';
+            
+            let scoreClass = 'score-poor';
+            if (accuracy >= 80) scoreClass = 'score-perfect';
+            else if (accuracy >= 60) scoreClass = 'score-good';
+            
+            scoreDiv.classList.add(scoreClass);
+            scoreDiv.innerHTML = `
+                <strong>🎯 Pronunciation Accuracy: ${accuracy.toFixed(1)}%</strong><br>
+                <small>${correctCount} out of ${expectedWords.length} words correct</small>
+            `;
+
+            // Display full transcription
+            const fullTextDiv = document.createElement('div');
+            fullTextDiv.className = 'full-transcription';
+            fullTextDiv.innerHTML = `
+                <strong>📝 Full Transcription:</strong><br>
+                "${transcriptionData.text}"
+            `;
+
+            // Debug info
+            const debugDiv = document.createElement('div');
+            debugDiv.className = 'debug-info';
+            debugDiv.innerHTML = `
+                <strong>🔍 Debug Information:</strong><br>
+                • Expected words: <strong>${expectedWords.join(', ')}</strong><br>
+                • Transcribed words: <strong>${allTranscribedWords.map(w => w.word).join(', ')}</strong><br>
+                • Total transcribed words: <strong>${allTranscribedWords.length}</strong><br>
+                • Matching method: <strong>Order-based sequential matching</strong><br>
+                • Evaluation: <strong>Simple pattern matching</strong>
+            `;
+
+            // Add everything to results section
+            resultsSection.appendChild(scoreDiv);
+            resultsSection.appendChild(table);
+            resultsSection.appendChild(fullTextDiv);
+            resultsSection.appendChild(debugDiv);
+            
+            console.log(`Table created: ${correctCount}/${expectedWords.length} correct (${accuracy.toFixed(1)}%)`);
+        }
+
+        function evaluateTranscription(transcribedText, expectedWord) {
+            const normalizedText = transcribedText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim().toLowerCase();
+            
+            // Find the word object from our data
+            const wordObject = wordData.find(w => w.word === expectedWord);
+            if (!wordObject) {
+                return { correct: false, message: "Word not found in dictionary" };
+            }
+
+            // Check correct patterns first
+            if (wordObject.correct && Array.isArray(wordObject.correct)) {
+                for (const pattern of wordObject.correct) {
+                    const escapedPattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(`^${escapedPattern}$`, 'i');
+                    if (regex.test(normalizedText)) {
+                        return { 
+                            correct: true, 
+                            matchedPattern: pattern,
+                            message: "✅ Correct pronunciation!"
+                        };
+                    }
+                }
+            }
+            
+            // Check incorrect patterns
+            if (wordObject.incorrect && Array.isArray(wordObject.incorrect)) {
+                for (const pattern of wordObject.incorrect) {
+                    const escapedPattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(`^${escapedPattern}$`, 'i');
+                    if (regex.test(normalizedText)) {
+                        return { 
+                            correct: false, 
+                            matchedPattern: pattern,
+                            message: "❌ Incorrect pronunciation detected"
+                        };
+                    }
+                }
+            }
+            
+            return { 
+                correct: false, 
+                matchedPattern: null,
+                message: "❌ No matching pattern found"
+            };
+        }
+
+        // Auto-create table when page loads
+        window.onload = createTable;
+    </script>
+</body>
+</html>

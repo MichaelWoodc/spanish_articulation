@@ -1,0 +1,60 @@
+{
+  "text": " a urgentar a urgentar a urgentar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " a urgentar",
+      "tokens": [
+        50364,
+        257,
+        19022,
+        289,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5652581453323364,
+      "compression_ratio": 1.4545454545454546,
+      "no_speech_prob": 0.6127297282218933
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " a urgentar",
+      "tokens": [
+        50464,
+        257,
+        19022,
+        289,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5652581453323364,
+      "compression_ratio": 1.4545454545454546,
+      "no_speech_prob": 0.6127297282218933
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " a urgentar",
+      "tokens": [
+        50564,
+        257,
+        19022,
+        289,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5652581453323364,
+      "compression_ratio": 1.4545454545454546,
+      "no_speech_prob": 0.6127297282218933
+    }
+  ],
+  "language": "es"
+}

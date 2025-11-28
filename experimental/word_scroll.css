@@ -1,0 +1,232 @@
+:root {
+  --gap: 34vw;
+  --scale-center: 1.2;
+  --scale-side: 0.92;
+  --duration: 420ms; 
+  --font-size: 60pt;
+  --bg: #0b0b0b;
+  --fg: #fff;
+  --muted: #bbb;
+}
+
+html, body {
+  height: 100%; 
+  margin: 0; 
+  background: var(--bg); 
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.stage {
+  height: 60vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  overflow: hidden; 
+  position: relative;
+}
+
+.slot {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  white-space: nowrap; 
+  font-size: var(--font-size);
+  transition: transform var(--duration) cubic-bezier(.2,.9,.2,1),
+              opacity var(--duration) cubic-bezier(.2,.9,.2,1);
+  pointer-events: none;
+}
+
+.slot.side { 
+  color: var(--muted); 
+}
+
+.slot.blank { 
+  opacity: 0.3; 
+}
+
+.pos-left { 
+  transform: translate(calc(-50% - var(--gap)), -50%) scale(var(--scale-side)); 
+  opacity: 0.55; 
+}
+
+.pos-center { 
+  transform: translate(-50%, -50%) scale(var(--scale-center)); 
+  opacity: 1; 
+}
+
+.pos-right { 
+  transform: translate(calc(-50% + var(--gap)), -50%) scale(var(--scale-side)); 
+  opacity: 0.55; 
+}
+
+.pos-off-right { 
+  transform: translate(calc(100vw), -50%) scale(var(--scale-side)); 
+  opacity: 0; 
+}
+
+.pos-off-left { 
+  transform: translate(calc(-100vw), -50%) scale(var(--scale-side)); 
+  opacity: 0.12; 
+}
+
+.controls {
+  position: fixed; 
+  left: 50%; 
+  transform: translateX(-50%);
+  bottom: 18px; 
+  text-align: center; 
+  color: #cfcfcf; 
+  font-size: 13px;
+  background: rgba(255,255,255,0.02); 
+  padding: 8px 12px; 
+  border-radius: 10px; 
+  backdrop-filter: blur(4px);
+}
+
+.controls input[type=range] { 
+  width: 320px; 
+  vertical-align: middle; 
+  margin-left: 10px; 
+}
+
+#log {
+  position: fixed; 
+  bottom: 120px; 
+  left: 0; 
+  right: 0;
+  max-height: 25vh; 
+  overflow-y: auto; 
+  background: #111; 
+  color: #fff;
+  border-top: 1px solid #444; 
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+.batch-entry {
+  background: rgba(255,165,0,0.1);
+  border-left: 3px solid #ffa500;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.playBtn { 
+  cursor: pointer; 
+  padding: 8px 12px;
+  font-size: 14px;
+  background: #ffa500;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+}
+
+.waveform { 
+  flex: 1;
+  height: 80px;
+  min-width: 300px;
+}
+
+.batch-title {
+  font-weight: bold;
+  color: #ffa500;
+  min-width: 200px;
+}
+
+button:disabled { 
+  opacity: 0.4; 
+  cursor: not-allowed; 
+}
+
+.status { 
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.progress {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #cfcfcf;
+  font-size: 12px;
+}
+
+.batch-indicator {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffa500;
+  font-size: 12px;
+}
+
+/* Transcription table styles */
+.transcription-table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.transcription-table th,
+.transcription-table td {
+  border: 1px solid #444;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.transcription-table th {
+  background: rgba(255,165,0,0.2);
+  color: #ffa500;
+}
+
+.transcription-table .word-cell {
+  min-width: 80px;
+}
+
+.transcription-table .time-cell {
+  min-width: 60px;
+  font-family: monospace;
+}
+
+.transcription-loading {
+  color: #ffa500;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.batch-score {
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.score-perfect {
+  background: rgba(0, 255, 0, 0.2);
+  color: #4CAF50;
+}
+
+.score-good {
+  background: rgba(255, 255, 0, 0.2);
+  color: #FFC107;
+}
+
+.score-poor {
+  background: rgba(255, 0, 0, 0.2);
+  color: #F44336;
+}

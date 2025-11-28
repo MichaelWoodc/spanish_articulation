@@ -1,0 +1,36 @@
+{
+  "text": " a hugh gentor a hugh gentor a hugh gentor",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 8.4,
+      "text": " a hugh gentor a hugh gentor a hugh gentor",
+      "tokens": [
+        50364,
+        257,
+        276,
+        1984,
+        16108,
+        284,
+        257,
+        276,
+        1984,
+        16108,
+        284,
+        257,
+        276,
+        1984,
+        16108,
+        284,
+        50784
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5715479320949979,
+      "compression_ratio": 1.64,
+      "no_speech_prob": 0.31265363097190857
+    }
+  ],
+  "language": "es"
+}

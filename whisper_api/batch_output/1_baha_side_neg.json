@@ -1,0 +1,30 @@
+{
+  "text": " Ve aquí, ve aquí, ve aquí.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Ve aquí, ve aquí, ve aquí.",
+      "tokens": [
+        50364,
+        9706,
+        6661,
+        11,
+        1241,
+        6661,
+        11,
+        1241,
+        6661,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7863287130991617,
+      "compression_ratio": 1.3181818181818181,
+      "no_speech_prob": 0.2528388798236847
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,29 @@
+{
+  "text": " oír, oír, oír",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " oír, oír, oír",
+      "tokens": [
+        50364,
+        277,
+        31338,
+        11,
+        277,
+        31338,
+        11,
+        277,
+        31338,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7659320831298828,
+      "compression_ratio": 0.9411764705882353,
+      "no_speech_prob": 0.73110431432724
+    }
+  ],
+  "language": "es"
+}

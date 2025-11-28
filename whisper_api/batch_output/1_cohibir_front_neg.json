@@ -1,0 +1,32 @@
+{
+  "text": " Cohíber, Cohíber, Cohíber",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.6000000000000005,
+      "text": " Cohíber, Cohíber, Cohíber",
+      "tokens": [
+        50364,
+        29000,
+        870,
+        607,
+        11,
+        29000,
+        870,
+        607,
+        11,
+        29000,
+        870,
+        607,
+        50644
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5946675028119769,
+      "compression_ratio": 1.3333333333333333,
+      "no_speech_prob": 0.385317862033844
+    }
+  ],
+  "language": "es"
+}

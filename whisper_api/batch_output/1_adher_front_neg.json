@@ -1,0 +1,30 @@
+{
+  "text": " adhirre adhirre adhirre",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.2,
+      "text": " adhirre adhirre adhirre",
+      "tokens": [
+        50364,
+        614,
+        24118,
+        265,
+        614,
+        24118,
+        265,
+        614,
+        24118,
+        265,
+        50724
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7239629427591959,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.29522421956062317
+    }
+  ],
+  "language": "es"
+}

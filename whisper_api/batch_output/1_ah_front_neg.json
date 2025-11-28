@@ -1,0 +1,29 @@
+{
+  "text": " oji, oji, oji",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " oji, oji, oji",
+      "tokens": [
+        50364,
+        277,
+        4013,
+        11,
+        277,
+        4013,
+        11,
+        277,
+        4013,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.741008845242587,
+      "compression_ratio": 0.8666666666666667,
+      "no_speech_prob": 0.5074961185455322
+    }
+  ],
+  "language": "es"
+}

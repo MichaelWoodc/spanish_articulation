@@ -1,0 +1,29 @@
+{
+  "text": " Buu, buu, buu",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Buu, buu, buu",
+      "tokens": [
+        50364,
+        4078,
+        84,
+        11,
+        758,
+        84,
+        11,
+        758,
+        84,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8592303015969016,
+      "compression_ratio": 0.8666666666666667,
+      "no_speech_prob": 0.42436525225639343
+    }
+  ],
+  "language": "es"
+}

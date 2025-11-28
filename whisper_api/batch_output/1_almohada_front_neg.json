@@ -1,0 +1,36 @@
+{
+  "text": " Almojada, almojada, almojada.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Almojada, almojada, almojada.",
+      "tokens": [
+        50364,
+        967,
+        3280,
+        73,
+        1538,
+        11,
+        419,
+        3280,
+        73,
+        1538,
+        11,
+        419,
+        3280,
+        73,
+        1538,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4574035538567437,
+      "compression_ratio": 1.3181818181818181,
+      "no_speech_prob": 0.553848385810852
+    }
+  ],
+  "language": "es"
+}

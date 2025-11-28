@@ -1,0 +1,29 @@
+{
+  "text": " Buen, Buen, Buen",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Buen, Buen, Buen",
+      "tokens": [
+        50364,
+        4078,
+        268,
+        11,
+        4078,
+        268,
+        11,
+        4078,
+        268,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9221190539273348,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.5561279058456421
+    }
+  ],
+  "language": "es"
+}

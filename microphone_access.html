@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microphone + Waveform Demo</title>
+  <!-- wavesurfer only -->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.microphone.min.js"></script>
+
+  <style>
+    body { 
+      background-color:#121212; 
+      color:#e0e0e0; 
+      font-family:Arial,sans-serif; 
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #waveform { 
+      width:100%; 
+      height:128px; 
+      background-color:#1e1e1e; 
+      margin: 2em 0; 
+    }
+    button { 
+      background-color:#4caf50; 
+      color:white; 
+      border:none; 
+      padding:12px 24px; 
+      margin:10px; 
+      cursor:pointer; 
+      border-radius:4px;
+      font-size:16px;
+    }
+    button:hover { background-color:#45a049; }
+    button:disabled { 
+      background-color:#666; 
+      cursor: not-allowed;
+    }
+    .step {
+      margin: 2em 0;
+      padding: 1em;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Step 1: Microphone Setup -->
+    <div id="step1" class="step">
+      <h2>Step 1: Microphone Setup</h2>
+      <p>Click the button below to allow microphone access and select your microphone.</p>
+      <button id="setupMic">Setup Microphone</button>
+    </div>
+
+    <!-- Step 2: Waveform Display -->
+    <div id="step2" class="step" style="display:none;">
+      <h2>Step 2: Test Your Microphone</h2>
+      <p>Speak into the microphone. You should see the waveform below.</p>
+      <div id="waveform"></div>
+      <button id="continue">Continue</button>
+    </div>
+
+    <!-- Step 3: Word Practice -->
+    <div id="step3" class="step" style="display:none;">
+      <h2>Step 3: Practice Word</h2>
+      <p style="font-size: 24px; color: #4caf50;">Say this word: <strong>ahora</strong></p>
+      <button id="next">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let wavesurfer;
+    let mediaStream;
+
+    document.getElementById('setupMic').addEventListener('click', async () => {
+      try {
+        // Request microphone access
+        mediaStream = await navigator.mediaDevices.getUserMedia({ 
+          audio: {
+            echoCancellation: false,
+            noiseSuppression: false,
+            autoGainControl: false
+          } 
+        });
+
+        // Hide step 1, show step 2
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+
+        // Initialize wavesurfer with microphone
+        wavesurfer = WaveSurfer.create({
+          container: '#waveform',
+          waveColor: '#4caf50',
+          interact: false,
+          cursorWidth: 0,
+          plugins: [
+            WaveSurfer.microphone.create()
+          ]
+        });
+
+        wavesurfer.microphone.start(mediaStream);
+
+      } catch (error) {
+        alert('Error accessing microphone: ' + error.message);
+      }
+    });
+
+    document.getElementById('continue').addEventListener('click', () => {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'block';
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      alert('Practice session complete!');
+      // Stop microphone when done
+      if (wavesurfer) {
+        wavesurfer.microphone.stop();
+      }
+      if (mediaStream) {
+        mediaStream.getTracks().forEach(track => track.stop());
+      }
+    });
+  </script>
+</body>
+</html>

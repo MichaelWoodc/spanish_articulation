@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Batch Word Transcription with Scrolling</title>
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<link rel="stylesheet" href="word_scroll.css">
+</head>
+<body>
+
+<div class="stage" id="stage"></div>
+
+<div class="controls">
+  RMS threshold: <strong id="tval">0.05</strong>
+  <input id="threshold" type="range" min="0.01" max="0.35" step="0.005" value="0.05">
+  <button id="sendBatch">Send Full Audio</button>
+</div>
+
+<div id="log"></div>
+
+<script src="word_scroll.js"></script>
+</body>
+</html>

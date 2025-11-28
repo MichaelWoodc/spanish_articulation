@@ -1,0 +1,33 @@
+{
+  "text": " Exhalo. Exhalo. Exhalo.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Exhalo. Exhalo. Exhalo.",
+      "tokens": [
+        50364,
+        2111,
+        4947,
+        78,
+        13,
+        2111,
+        4947,
+        78,
+        13,
+        2111,
+        4947,
+        78,
+        13,
+        50714
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.5742880503336588,
+      "compression_ratio": 1.2777777777777777,
+      "no_speech_prob": 0.48041269183158875
+    }
+  ],
+  "language": "es"
+}

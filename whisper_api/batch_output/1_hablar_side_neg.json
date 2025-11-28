@@ -1,0 +1,27 @@
+{
+  "text": " Hablar, hablar, hablar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Hablar, hablar, hablar",
+      "tokens": [
+        50364,
+        14225,
+        2200,
+        11,
+        21014,
+        11,
+        21014,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6150653097364638,
+      "compression_ratio": 1.2222222222222223,
+      "no_speech_prob": 0.386768639087677
+    }
+  ],
+  "language": "es"
+}

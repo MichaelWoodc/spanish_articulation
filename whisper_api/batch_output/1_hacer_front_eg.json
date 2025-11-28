@@ -1,0 +1,26 @@
+{
+  "text": " hacer, hacer, hacer",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " hacer, hacer, hacer",
+      "tokens": [
+        50364,
+        6720,
+        11,
+        6720,
+        11,
+        6720,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7755946516990662,
+      "compression_ratio": 1.1176470588235294,
+      "no_speech_prob": 0.40183788537979126
+    }
+  ],
+  "language": "es"
+}

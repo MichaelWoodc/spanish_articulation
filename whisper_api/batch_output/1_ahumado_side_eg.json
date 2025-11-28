@@ -1,0 +1,36 @@
+{
+  "text": " Ayúdame, ayúdame, ayúdame.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.8,
+      "text": " Ayúdame, ayúdame, ayúdame.",
+      "tokens": [
+        50364,
+        9081,
+        2481,
+        67,
+        529,
+        11,
+        7494,
+        2481,
+        67,
+        529,
+        11,
+        7494,
+        2481,
+        67,
+        529,
+        13,
+        50654
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5593146748012967,
+      "compression_ratio": 1.3181818181818181,
+      "no_speech_prob": 0.31195053458213806
+    }
+  ],
+  "language": "es"
+}

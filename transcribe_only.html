@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Whisper Transcription Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    button { margin: 0.5em; padding: 0.5em 1em; }
+    textarea { width: 100%; height: 200px; margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Whisper Transcription Demo</h1>
+  <button id="recordBtn">🎙️ Record</button>
+  <button id="stopBtn" disabled>⏹️ Stop</button>
+  <textarea id="output" placeholder="Transcription will appear here..."></textarea>
+
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        const recordBtn = document.getElementById('recordBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const outputBox = document.getElementById('output');
+
+        recordBtn.onclick = async () => {
+        audioChunks = [];
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start();
+
+        recordBtn.disabled = true;
+        stopBtn.disabled = false;
+
+        mediaRecorder.ondataavailable = e => {
+            if (e.data.size > 0) audioChunks.push(e.data);
+        };
+        };
+
+        stopBtn.onclick = async () => {
+        mediaRecorder.stop();
+        recordBtn.disabled = false;
+        stopBtn.disabled = true;
+
+        mediaRecorder.onstop = async () => {
+            const blob = new Blob(audioChunks, { type: 'audio/webm' });
+            const formData = new FormData();
+            formData.append("file", blob, "recording.webm");
+
+            try {
+            // ✅ Use your remote server URL here
+            const response = await fetch("https://speech.michaelwoodcock.duckdns.org/transcribe", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+            outputBox.value = data.text || JSON.stringify(data);
+            } catch (err) {
+            outputBox.value = "Error: " + err;
+            }
+        };
+        };
+    </script>
+
+</body>
+</html>

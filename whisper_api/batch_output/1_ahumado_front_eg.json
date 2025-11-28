@@ -1,0 +1,32 @@
+{
+  "text": " Aumago, Aumago, Aumago",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Aumago, Aumago, Aumago",
+      "tokens": [
+        50364,
+        316,
+        449,
+        6442,
+        11,
+        316,
+        449,
+        6442,
+        11,
+        316,
+        449,
+        6442,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7548957552228656,
+      "compression_ratio": 1.2222222222222223,
+      "no_speech_prob": 0.4824695885181427
+    }
+  ],
+  "language": "es"
+}

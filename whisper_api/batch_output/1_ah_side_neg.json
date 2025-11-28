@@ -1,0 +1,31 @@
+{
+  "text": " ¡Ahí, ahí, ahí!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.64,
+      "text": " ¡Ahí, ahí, ahí!",
+      "tokens": [
+        50364,
+        6514,
+        10844,
+        870,
+        11,
+        3716,
+        870,
+        11,
+        3716,
+        870,
+        0,
+        50646
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.7999382019042969,
+      "compression_ratio": 0.95,
+      "no_speech_prob": 0.3343336284160614
+    }
+  ],
+  "language": "es"
+}

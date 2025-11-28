@@ -1,0 +1,63 @@
+{
+  "text": " Ahu Mado Ahu Mado Ahu Mado",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " Ahu Mado",
+      "tokens": [
+        50364,
+        2438,
+        84,
+        376,
+        1573,
+        50464
+      ],
+      "temperature": 0.6,
+      "avg_logprob": -0.679617630807977,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.49526748061180115
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " Ahu Mado",
+      "tokens": [
+        50464,
+        2438,
+        84,
+        376,
+        1573,
+        50564
+      ],
+      "temperature": 0.6,
+      "avg_logprob": -0.679617630807977,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.49526748061180115
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " Ahu Mado",
+      "tokens": [
+        50564,
+        2438,
+        84,
+        376,
+        1573,
+        50664
+      ],
+      "temperature": 0.6,
+      "avg_logprob": -0.679617630807977,
+      "compression_ratio": 1.3,
+      "no_speech_prob": 0.49526748061180115
+    }
+  ],
+  "language": "es"
+}

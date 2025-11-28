@@ -1,0 +1,26 @@
+{
+  "text": " ¡Hey, sir!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " ¡Hey, sir!",
+      "tokens": [
+        50364,
+        6514,
+        7057,
+        11,
+        4735,
+        0,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7870291471481323,
+      "compression_ratio": 0.5789473684210527,
+      "no_speech_prob": 0.3012417256832123
+    }
+  ],
+  "language": "es"
+}

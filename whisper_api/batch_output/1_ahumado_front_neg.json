@@ -1,0 +1,33 @@
+{
+  "text": " Ehumado, Ehumado, Ehumado.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Ehumado, Ehumado, Ehumado.",
+      "tokens": [
+        50364,
+        9663,
+        449,
+        1573,
+        11,
+        9663,
+        449,
+        1573,
+        11,
+        9663,
+        449,
+        1573,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5496035893758138,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.28269901871681213
+    }
+  ],
+  "language": "es"
+}

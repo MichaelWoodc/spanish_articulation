@@ -1,0 +1,26 @@
+{
+  "text": " ahí, ahí, ahí",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " ahí, ahí, ahí",
+      "tokens": [
+        50364,
+        12571,
+        11,
+        12571,
+        11,
+        12571,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8659335970878601,
+      "compression_ratio": 0.9411764705882353,
+      "no_speech_prob": 0.5961261987686157
+    }
+  ],
+  "language": "es"
+}

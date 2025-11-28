@@ -1,0 +1,29 @@
+{
+  "text": " Asar, Asar, Asar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Asar, Asar, Asar",
+      "tokens": [
+        50364,
+        1018,
+        289,
+        11,
+        1018,
+        289,
+        11,
+        1018,
+        289,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6536965370178223,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.33849626779556274
+    }
+  ],
+  "language": "es"
+}

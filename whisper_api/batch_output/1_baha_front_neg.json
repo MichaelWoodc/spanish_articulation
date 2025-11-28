@@ -1,0 +1,30 @@
+{
+  "text": " Bahaya, bahaya, bahaya.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Bahaya, bahaya, bahaya.",
+      "tokens": [
+        50364,
+        14782,
+        4427,
+        11,
+        12913,
+        4427,
+        11,
+        12913,
+        4427,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.551409125328064,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.2937885820865631
+    }
+  ],
+  "language": "es"
+}

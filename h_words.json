@@ -1,0 +1,88 @@
+{
+  "words": [
+    {
+      "word": "adher",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["aderri"],
+      "incorrect": ["adhirre"]
+    },
+    {
+      "word": "ah",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["ahi"],
+      "incorrect": ["oji", "aji"]
+    },
+    {
+      "word": "ahora",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["ahora"],
+      "incorrect": ["ajoora"]
+    },
+    {
+      "word": "ahumado",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["aumago", "ayudame"],
+      "incorrect": ["ehumado", "munecito"]
+    },
+    {
+      "word": "ahuyentar",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["a urgentar"],
+      "incorrect": ["a hugh gentor", "ajujentar"]
+    },
+    {
+      "word": "almohada",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["almohada"],
+      "incorrect": ["almojada"]
+    },
+    {
+      "word": "azahar",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["asar"],
+      "incorrect": ["ese jar"]
+    },
+    {
+      "word": "baha",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["bahia", "vaya"],
+      "incorrect": ["bahaya", "ve aqui"]
+    },
+    {
+      "word": "bho",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["buu", "buen"],
+      "incorrect": ["bujo"]
+    },
+    {
+      "word": "cohete",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["coete", "cue te"],
+      "incorrect": ["cojite", "cojiti"]
+    },
+    {
+      "word": "cohibir",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["cohibir", "oir"],
+      "incorrect": ["cohiber", "cojibir"]
+    },
+    {
+      "word": "exhalo",
+      "example_videos": ["<placeholder for example video>"],
+      "counterexample_videos": ["<placeholder for incorrect video>"],
+      "correct": ["exhalo"],
+      "incorrect": ["exhaleo"]
+    }
+  ]
+}

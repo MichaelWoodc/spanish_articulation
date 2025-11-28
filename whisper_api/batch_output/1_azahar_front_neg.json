@@ -1,0 +1,31 @@
+{
+  "text": " Ese jar, ese jar, ese jar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Ese jar, ese jar, ese jar.",
+      "tokens": [
+        50364,
+        462,
+        405,
+        15181,
+        11,
+        10167,
+        15181,
+        11,
+        10167,
+        15181,
+        13,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7102212172288161,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.48471635580062866
+    }
+  ],
+  "language": "es"
+}

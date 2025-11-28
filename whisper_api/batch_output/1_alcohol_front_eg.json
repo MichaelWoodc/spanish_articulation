@@ -1,0 +1,28 @@
+{
+  "text": " Alcohol, alcohol, alcohol.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Alcohol, alcohol, alcohol.",
+      "tokens": [
+        50364,
+        967,
+        7210,
+        11,
+        7658,
+        11,
+        7658,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8873493194580078,
+      "compression_ratio": 1.2380952380952381,
+      "no_speech_prob": 0.08992389589548111
+    }
+  ],
+  "language": "es"
+}

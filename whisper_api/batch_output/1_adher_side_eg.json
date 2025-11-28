@@ -1,0 +1,32 @@
+{
+  "text": " Aderrí, aderrí, aderrí",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.4,
+      "text": " Aderrí, aderrí, aderrí",
+      "tokens": [
+        50364,
+        316,
+        1068,
+        40577,
+        11,
+        257,
+        1068,
+        40577,
+        11,
+        257,
+        1068,
+        40577,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5728111267089844,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.5941693782806396
+    }
+  ],
+  "language": "es"
+}

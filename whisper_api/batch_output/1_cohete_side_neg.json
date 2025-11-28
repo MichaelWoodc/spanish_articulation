@@ -1,0 +1,32 @@
+{
+  "text": " Cojiti, Cojiti, Cojiti",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Cojiti, Cojiti, Cojiti",
+      "tokens": [
+        50364,
+        3066,
+        73,
+        8707,
+        11,
+        3066,
+        73,
+        8707,
+        11,
+        3066,
+        73,
+        8707,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5577236584254673,
+      "compression_ratio": 1.2222222222222223,
+      "no_speech_prob": 0.25552377104759216
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,32 @@
+{
+  "text": " Cohibir, cohibir, cohibir",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.54,
+      "text": " Cohibir, cohibir, cohibir",
+      "tokens": [
+        50364,
+        3066,
+        5455,
+        347,
+        11,
+        598,
+        5455,
+        347,
+        11,
+        598,
+        5455,
+        347,
+        50641
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5930951663425991,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.4911496341228485
+    }
+  ],
+  "language": "es"
+}

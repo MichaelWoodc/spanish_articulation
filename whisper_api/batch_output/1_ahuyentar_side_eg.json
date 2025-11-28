@@ -1,0 +1,30 @@
+{
+  "text": " a urgentar a urgentar a urgentar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.36,
+      "text": " a urgentar a urgentar a urgentar",
+      "tokens": [
+        50364,
+        257,
+        19022,
+        289,
+        257,
+        19022,
+        289,
+        257,
+        19022,
+        289,
+        50732
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.774115244547526,
+      "compression_ratio": 1.4545454545454546,
+      "no_speech_prob": 0.602877676486969
+    }
+  ],
+  "language": "es"
+}

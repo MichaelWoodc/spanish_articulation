@@ -1,0 +1,28 @@
+{
+  "text": " ¡Ajujentar!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.4,
+      "text": " ¡Ajujentar!",
+      "tokens": [
+        50364,
+        6514,
+        32,
+        73,
+        4579,
+        317,
+        289,
+        0,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8911974906921387,
+      "compression_ratio": 0.6,
+      "no_speech_prob": 0.2666873335838318
+    }
+  ],
+  "language": "es"
+}

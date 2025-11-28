@@ -1,0 +1,32 @@
+{
+  "text": " Azahar, Azahar, Azahar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Azahar, Azahar, Azahar",
+      "tokens": [
+        50364,
+        7607,
+        545,
+        289,
+        11,
+        7607,
+        545,
+        289,
+        11,
+        7607,
+        545,
+        289,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.44477977071489605,
+      "compression_ratio": 1.2222222222222223,
+      "no_speech_prob": 0.22316408157348633
+    }
+  ],
+  "language": "es"
+}

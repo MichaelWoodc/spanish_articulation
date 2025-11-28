@@ -1,0 +1,27 @@
+{
+  "text": " Ahora, ahora, ahora.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Ahora, ahora, ahora.",
+      "tokens": [
+        50364,
+        18840,
+        11,
+        9923,
+        11,
+        9923,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6963480843438042,
+      "compression_ratio": 1.1111111111111112,
+      "no_speech_prob": 0.3931092917919159
+    }
+  ],
+  "language": "es"
+}

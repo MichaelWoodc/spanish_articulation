@@ -1,0 +1,35 @@
+{
+  "text": " Cojibir, cojibir, cojibir",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " Cojibir, cojibir, cojibir",
+      "tokens": [
+        50364,
+        3066,
+        73,
+        897,
+        347,
+        11,
+        598,
+        73,
+        897,
+        347,
+        11,
+        598,
+        73,
+        897,
+        347,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4326992876389447,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.40087491273880005
+    }
+  ],
+  "language": "es"
+}

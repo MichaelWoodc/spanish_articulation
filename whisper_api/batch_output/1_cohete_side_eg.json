@@ -1,0 +1,31 @@
+{
+  "text": " Cue te, cue te, cue te.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.0,
+      "text": " Cue te, cue te, cue te.",
+      "tokens": [
+        50364,
+        383,
+        622,
+        535,
+        11,
+        22656,
+        535,
+        11,
+        22656,
+        535,
+        13,
+        50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7904005784254807,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.5927805304527283
+    }
+  ],
+  "language": "es"
+}

@@ -1,0 +1,33 @@
+{
+  "text": " Coeté, coeté, coeté.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.44,
+      "text": " Coeté, coeté, coeté.",
+      "tokens": [
+        50364,
+        3066,
+        302,
+        526,
+        11,
+        598,
+        302,
+        526,
+        11,
+        598,
+        302,
+        526,
+        13,
+        50636
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6001364390055338,
+      "compression_ratio": 1.15,
+      "no_speech_prob": 0.48494693636894226
+    }
+  ],
+  "language": "es"
+}

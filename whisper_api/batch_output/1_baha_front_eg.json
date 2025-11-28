@@ -1,0 +1,30 @@
+{
+  "text": " Bahía, bahía, bahía.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Bahía, bahía, bahía.",
+      "tokens": [
+        50364,
+        14782,
+        2686,
+        11,
+        12913,
+        2686,
+        11,
+        12913,
+        2686,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6322394609451294,
+      "compression_ratio": 1.15,
+      "no_speech_prob": 0.7088840007781982
+    }
+  ],
+  "language": "es"
+}

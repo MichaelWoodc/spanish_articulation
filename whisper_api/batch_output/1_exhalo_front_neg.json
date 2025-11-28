@@ -1,0 +1,29 @@
+{
+  "text": " exhaleo, exhaleo, exhaleo",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.0,
+      "text": " exhaleo, exhaleo, exhaleo",
+      "tokens": [
+        50364,
+        19652,
+        78,
+        11,
+        19652,
+        78,
+        11,
+        19652,
+        78,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8550805178555575,
+      "compression_ratio": 1.25,
+      "no_speech_prob": 0.26049864292144775
+    }
+  ],
+  "language": "es"
+}

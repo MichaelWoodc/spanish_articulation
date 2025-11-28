@@ -1,0 +1,33 @@
+{
+  "text": " Ajoora, ajoora, ajoora.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.7,
+      "text": " Ajoora, ajoora, ajoora.",
+      "tokens": [
+        50364,
+        316,
+        5134,
+        3252,
+        11,
+        257,
+        5134,
+        3252,
+        11,
+        257,
+        5134,
+        3252,
+        13,
+        50599
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7624383926391601,
+      "compression_ratio": 1.2105263157894737,
+      "no_speech_prob": 0.28756749629974365
+    }
+  ],
+  "language": "es"
+}

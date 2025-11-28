@@ -1,0 +1,25 @@
+{
+  "text": " ¡Hacer!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 7.0,
+      "text": " ¡Hacer!",
+      "tokens": [
+        50364,
+        6514,
+        39,
+        12858,
+        0,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8357208115713937,
+      "compression_ratio": 0.5,
+      "no_speech_prob": 0.4241138994693756
+    }
+  ],
+  "language": "es"
+}
