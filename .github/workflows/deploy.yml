@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main   # or your default branch
+      - main
   workflow_dispatch:
 
 jobs:
@@ -22,8 +22,9 @@ jobs:
       - name: Generate directory.html
         run: python generate_directory.py
 
+      # IMPORTANT: Use latest upload-pages-artifact (v3)
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .   # everything in repo root, including directory.html
 
@@ -35,5 +36,6 @@ jobs:
       id-token: write
 
     steps:
+      # IMPORTANT: Use latest deploy-pages (v4)
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
