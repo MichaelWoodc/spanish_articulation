@@ -3,10 +3,14 @@ import os
 # CONFIG: set your base URL
 BASE_URL = "https://michaelwoodc.github.io/spanish_articulation/"
 ROOT_DIR = "."   # repo root
+IGNORE_DIRS = {"jspsyc"}  # directories to skip
 
 def find_html_files(root):
     html_files = []
-    for dirpath, _, filenames in os.walk(root):
+    for dirpath, dirnames, filenames in os.walk(root):
+        # filter out ignored directories
+        dirnames[:] = [d for d in dirnames if d not in IGNORE_DIRS]
+
         for f in filenames:
             if f.endswith(".html"):
                 rel_path = os.path.relpath(os.path.join(dirpath, f), root)
@@ -50,4 +54,4 @@ directory_html += "</body></html>"
 with open("directory.html", "w", encoding="utf-8") as f:
     f.write(directory_html)
 
-print("✅ directory.html generated")
+print("✅ directory.html generated (excluding jspsyc)")
