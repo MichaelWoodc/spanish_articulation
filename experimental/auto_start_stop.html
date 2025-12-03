@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Voice Recorder</title>
+</head>
+<body>
+  <h1 style="margin-top: 0">Smart Voice Recorder 🎙️</h1>
+  
+  <p>Voice-activated recording with 1-second pre-roll</p>
+
+  <button id="record">Start Listening</button>
+  <button id="pause" style="display: none;">Pause</button>
+
+  <select id="mic-select">
+    <option value="" hidden>Select mic</option>
+  </select>
+
+  <div style="margin: 1rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <div style="border: 1px solid #ccc; padding: 15px; border-radius: 4px;">
+      <h3 style="margin-top: 0">Start Recording</h3>
+      <div>
+        <label>Volume Threshold: <span id="startThresholdValue">20</span>%</label>
+        <input type="range" id="startThreshold" min="1" max="100" step="1" value="20">
+      </div>
+      <div style="margin-top: 10px;">
+        <label>Hold Duration (ms): <span id="startDurationValue">300</span></label>
+        <input type="range" id="startDuration" min="100" max="1000" step="50" value="300">
+        <div style="font-size: 12px; color: #666;">Volume must stay above threshold for this long to start</div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #ccc; padding: 15px; border-radius: 4px;">
+      <h3 style="margin-top: 0">Stop Recording</h3>
+      <div>
+        <label>Volume Threshold: <span id="stopThresholdValue">5</span>%</label>
+        <input type="range" id="stopThreshold" min="1" max="100" step="1" value="5">
+      </div>
+      <div style="margin-top: 10px;">
+        <label>Hold Duration (ms): <span id="stopDurationValue">1000</span></label>
+        <input type="range" id="stopDuration" min="500" max="3000" step="100" value="1000">
+        <div style="font-size: 12px; color: #666;">Volume must stay below threshold for this long to stop</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin: 1rem 0; border: 1px solid #ccc; padding: 15px; border-radius: 4px;">
+    <h3 style="margin-top: 0">Live Volume Monitor</h3>
+    <div>
+      <label>Current Volume: <span id="volumeValue">0</span>%</label>
+      <div id="volumeBar" style="width: 100%; height: 30px; background: #f0f0f0; margin-top: 5px; position: relative; border-radius: 4px;">
+        <div id="volumeFill" style="width: 0%; height: 100%; background: #4a6fa5; border-radius: 4px; transition: width 100ms;"></div>
+        <div id="startThresholdLine" style="position: absolute; top: 0; height: 100%; width: 2px; background: #00aa00; left: 20%;"></div>
+        <div id="stopThresholdLine" style="position: absolute; top: 0; height: 100%; width: 2px; background: #ff4444; left: 5%;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+        <span style="font-size: 12px; color: #00aa00;">Start Threshold (20%)</span>
+        <span style="font-size: 12px; color: #ff4444;">Stop Threshold (5%)</span>
+      </div>
+    </div>
+    <div style="margin-top: 10px;">
+      <div>Status: <span id="status" style="font-weight: bold;">Idle</span></div>
+      <div>Recording Active: <span id="recordingStatus">No</span></div>
+      <div>Above Start: <span id="aboveStartTime">0ms</span> / <span id="startDurationDisplay">300ms</span></div>
+      <div>Below Stop: <span id="belowStopTime">0ms</span> / <span id="stopDurationDisplay">1000ms</span></div>
+    </div>
+  </div>
+
+  <label><input type="checkbox" id="scrollingWaveform" /> Scrolling waveform</label>
+  <label><input type="checkbox" id="continuousWaveform" checked="checked" /> Continuous waveform</label>
+
+  <p id="progress">00:00</p>
+
+  <div id="mic" style="border: 1px solid #ddd; border-radius: 4px; margin-top: 1rem; height: 150px;"></div>
+
+  <div id="recordings" style="margin: 1rem 0"></div>
+
+  <style>
+    button {
+      min-width: 5rem;
+      margin: 1rem 1rem 1rem 0;
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    .recording-info {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+
+  <script type="module">
+    import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+    import RecordPlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js'
+
+    let wavesurfer, record
+    let scrollingWaveform = false
+    let continuousWaveform = true
+    
+    // Voice detection state
+    let isListening = false
+    let isRecordingActive = false
+    
+    // Audio analysis using Web Audio API directly
+    let audioContext
+    let analyser
+    let microphoneStream
+    
+    // Timing and thresholds (as percentages 0-100)
+    let startThreshold = 20
+    let stopThreshold = 5
+    let startDuration = 300
+    let stopDuration = 1000
+    
+    let aboveStartTime = 0
+    let belowStopTime = 0
+    let lastUpdateTime = Date.now()
+    
+    // Volume history for smoothing
+    let volumeHistory = []
+    const historySize = 5
+    
+    // For trimming - track when recording started and voice detection time
+    let recordingStartTimestamp = 0
+    let voiceDetectionTimestamp = 0
+    let recordingStartTime = 0
+
+    const createWaveSurfer = () => {
+      if (wavesurfer) wavesurfer.destroy()
+
+      wavesurfer = WaveSurfer.create({
+        container: '#mic',
+        waveColor: 'rgb(200, 0, 200)',
+        progressColor: 'rgb(100, 0, 100)',
+        height: 150,
+      })
+
+      record = wavesurfer.registerPlugin(
+        RecordPlugin.create({
+          renderRecordedAudio: false,
+          scrollingWaveform,
+          continuousWaveform,
+          continuousWaveformDuration: 30,
+        }),
+      )
+      
+      record.on('record-progress', (time) => {
+        updateProgress(time)
+      })
+      
+      record.on('record-end', async (blob) => {
+        // Calculate the trim start time based on when voice was detected
+        const trimStartTime = calculateTrimStartTime()
+        
+        // Trim the recording and save it
+        await trimAndSaveRecording(blob, trimStartTime)
+        isRecordingActive = false
+        updateRecordingStatus()
+        
+        // Reset timing variables
+        voiceDetectionTimestamp = 0
+        recordingStartTime = 0
+        
+        // Restart recording for next segment
+        if (isListening) {
+          setTimeout(() => {
+            if (isListening && !record.isRecording()) {
+              // Clear the waveform display
+              if (wavesurfer) {
+                wavesurfer.empty()
+              }
+              
+              // Start recording again
+              record.startRecording({ deviceId: micSelect.value }).then(() => {
+                document.querySelector('#status').textContent = 'Listening...'
+                aboveStartTime = 0
+                belowStopTime = 0
+                updateTimingDisplay()
+              }).catch(error => {
+                console.error('Error restarting recording:', error)
+                document.querySelector('#status').textContent = 'Error'
+              })
+            }
+          }, 100)
+        }
+      })
+      
+      pauseButton.style.display = 'none'
+      recButton.textContent = 'Start Listening'
+    }
+
+    // Calculate where to start trimming (1 second before voice detection)
+    const calculateTrimStartTime = () => {
+      if (!voiceDetectionTimestamp || !recordingStartTimestamp) return 0
+      
+      // Calculate how many seconds after recording started that voice was detected
+      const voiceDetectionDelay = (voiceDetectionTimestamp - recordingStartTimestamp) / 1000
+      
+      // We want to keep 1 second before voice detection
+      const trimStartTime = Math.max(0, voiceDetectionDelay - 1.0)
+      
+      console.log(`Voice detected at ${voiceDetectionDelay.toFixed(2)}s, trimming from ${trimStartTime.toFixed(2)}s`)
+      return trimStartTime
+    }
+
+    // Initialize Web Audio API for real volume analysis
+    const initAudioAnalysis = async (stream) => {
+      if (audioContext) {
+        audioContext.close()
+      }
+      
+      audioContext = new (window.AudioContext || window.webkitAudioContext)()
+      analyser = audioContext.createAnalyser()
+      analyser.fftSize = 2048
+      analyser.smoothingTimeConstant = 0.3
+      
+      const source = audioContext.createMediaStreamSource(stream)
+      source.connect(analyser)
+      
+      // Store the stream for later use
+      microphoneStream = stream
+      
+      // Analyze volume in real-time
+      const analyzeVolume = () => {
+        if (!analyser || !isListening) return
+        
+        const dataArray = new Uint8Array(analyser.frequencyBinCount)
+        analyser.getByteFrequencyData(dataArray)
+        
+        // Calculate average volume (0-255)
+        let sum = 0
+        for (let i = 0; i < dataArray.length; i++) {
+          sum += dataArray[i]
+        }
+        const average = sum / dataArray.length
+        
+        // Convert to percentage (0-100%)
+        const volumePercent = (average / 255) * 100
+        
+        // Update volume history for smoothing
+        volumeHistory.push(volumePercent)
+        if (volumeHistory.length > historySize) {
+          volumeHistory.shift()
+        }
+        
+        // Calculate smoothed volume
+        const smoothedVolume = volumeHistory.length > 0 
+          ? volumeHistory.reduce((a, b) => a + b) / volumeHistory.length
+          : volumePercent
+        
+        // Update display
+        updateVolumeDisplay(smoothedVolume)
+        
+        // Detect voice activity
+        if (isListening) {
+          detectVoiceActivity(smoothedVolume)
+        }
+        
+        // Continue analyzing
+        requestAnimationFrame(analyzeVolume)
+      }
+      
+      // Start analysis
+      analyzeVolume()
+    }
+
+    const progress = document.querySelector('#progress')
+    const updateProgress = (time) => {
+      const formattedTime = [
+        Math.floor((time % 3600000) / 60000),
+        Math.floor((time % 60000) / 1000),
+      ].map(v => v < 10 ? '0' + v : v).join(':')
+      progress.textContent = formattedTime
+      
+      // Store the current recording time
+      recordingStartTime = time / 1000 // Convert to seconds
+    }
+
+    // Voice activity detection with dual thresholds
+    const detectVoiceActivity = (volumePercent) => {
+      const now = Date.now()
+      const deltaTime = now - lastUpdateTime
+      
+      if (!isRecordingActive) {
+        // Waiting to start recording
+        if (volumePercent > startThreshold) {
+          aboveStartTime += deltaTime
+          belowStopTime = 0
+          
+          // Store when voice was first detected (for trimming)
+          if (voiceDetectionTimestamp === 0 && aboveStartTime > 50) {
+            voiceDetectionTimestamp = now - aboveStartTime
+          }
+        } else {
+          aboveStartTime = Math.max(0, aboveStartTime - deltaTime)
+          if (aboveStartTime === 0) {
+            voiceDetectionTimestamp = 0
+          }
+        }
+        
+        // Check if we should start marking as active recording
+        if (aboveStartTime >= startDuration) {
+          // Mark recording as active
+          isRecordingActive = true
+          document.querySelector('#status').textContent = 'Recording!'
+          updateRecordingStatus()
+          
+          // Store when recording officially started (when we marked it active)
+          recordingStartTimestamp = now
+          
+          // Reset timing counters
+          aboveStartTime = 0
+          belowStopTime = 0
+        }
+      } else {
+        // Currently recording, check if we should stop
+        if (volumePercent < stopThreshold) {
+          belowStopTime += deltaTime
+        } else {
+          belowStopTime = Math.max(0, belowStopTime - deltaTime)
+        }
+        
+        // Check if we should stop recording
+        if (belowStopTime >= stopDuration) {
+          // Stop the current recording segment
+          if (record.isRecording()) {
+            record.stopRecording()
+            document.querySelector('#status').textContent = 'Processing...'
+          }
+        }
+      }
+      
+      lastUpdateTime = now
+      updateTimingDisplay()
+    }
+
+    // Trim audio to start 1 second before voice detection
+    const trimAndSaveRecording = async (blob, trimStartTime) => {
+      try {
+        // Create an AudioContext to process the audio
+        const trimContext = new (window.AudioContext || window.webkitAudioContext)()
+        const arrayBuffer = await blob.arrayBuffer()
+        const audioBuffer = await trimContext.decodeAudioData(arrayBuffer)
+        
+        const sampleRate = audioBuffer.sampleRate
+        const startSample = Math.floor(trimStartTime * sampleRate)
+        
+        // Calculate new length (from trim point to end)
+        const newLength = audioBuffer.length - startSample
+        
+        // Create a new buffer for the trimmed audio
+        const trimmedBuffer = trimContext.createBuffer(
+          audioBuffer.numberOfChannels,
+          newLength,
+          sampleRate
+        )
+        
+        // Copy data starting from trim point
+        for (let channel = 0; channel < audioBuffer.numberOfChannels; channel++) {
+          const originalData = audioBuffer.getChannelData(channel)
+          const trimmedData = trimmedBuffer.getChannelData(channel)
+          
+          // Copy from trim point to end
+          for (let i = 0; i < newLength; i++) {
+            trimmedData[i] = originalData[startSample + i]
+          }
+        }
+        
+        // Convert trimmed buffer to WAV blob
+        const trimmedBlob = await audioBufferToWav(trimmedBuffer)
+        
+        // Save the trimmed recording with info
+        saveRecording(trimmedBlob, trimStartTime)
+        
+        // Close the AudioContext
+        await trimContext.close()
+        
+      } catch (error) {
+        console.error('Error trimming audio:', error)
+        // If trimming fails, save the original blob
+        saveRecording(blob, 0)
+      }
+    }
+
+    // Convert AudioBuffer to WAV blob
+    const audioBufferToWav = async (buffer) => {
+      const numChannels = buffer.numberOfChannels
+      const sampleRate = buffer.sampleRate
+      const format = 1 // PCM
+      const bitDepth = 16
+      
+      const bytesPerSample = bitDepth / 8
+      const blockAlign = numChannels * bytesPerSample
+      const byteRate = sampleRate * blockAlign
+      const dataSize = buffer.length * blockAlign
+      const bufferSize = 44 + dataSize
+      
+      const arrayBuffer = new ArrayBuffer(bufferSize)
+      const view = new DataView(arrayBuffer)
+      
+      // Write WAV header
+      writeString(view, 0, 'RIFF')
+      view.setUint32(4, bufferSize - 8, true)
+      writeString(view, 8, 'WAVE')
+      writeString(view, 12, 'fmt ')
+      view.setUint32(16, 16, true)
+      view.setUint16(20, format, true)
+      view.setUint16(22, numChannels, true)
+      view.setUint32(24, sampleRate, true)
+      view.setUint32(28, byteRate, true)
+      view.setUint16(32, blockAlign, true)
+      view.setUint16(34, bitDepth, true)
+      writeString(view, 36, 'data')
+      view.setUint32(40, dataSize, true)
+      
+      // Write audio data
+      let offset = 44
+      for (let i = 0; i < buffer.length; i++) {
+        for (let channel = 0; channel < numChannels; channel++) {
+          const sample = Math.max(-1, Math.min(1, buffer.getChannelData(channel)[i]))
+          view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7FFF, true)
+          offset += 2
+        }
+      }
+      
+      return new Blob([arrayBuffer], { type: 'audio/wav' })
+    }
+
+    const writeString = (view, offset, string) => {
+      for (let i = 0; i < string.length; i++) {
+        view.setUint8(offset + i, string.charCodeAt(i))
+      }
+    }
+
+    const saveRecording = (blob, trimStartTime) => {
+      const container = document.querySelector('#recordings')
+      const recordedUrl = URL.createObjectURL(blob)
+
+      // Create wavesurfer from the recorded audio
+      const wavesurfer = WaveSurfer.create({
+        container,
+        waveColor: 'rgb(200, 100, 0)',
+        progressColor: 'rgb(100, 50, 0)',
+        url: recordedUrl,
+        height: 100,
+      })
+
+      // Create info div
+      const infoDiv = document.createElement('div')
+      infoDiv.className = 'recording-info'
+      if (trimStartTime > 0) {
+        infoDiv.textContent = `Trimmed first ${trimStartTime.toFixed(2)}s, kept 1s pre-roll`
+      } else {
+        infoDiv.textContent = 'Original recording (no trim)'
+      }
+      
+      // Play button
+      const button = document.createElement('button')
+      button.textContent = 'Play'
+      button.onclick = () => wavesurfer.playPause()
+      wavesurfer.on('pause', () => (button.textContent = 'Play'))
+      wavesurfer.on('play', () => (button.textContent = 'Pause'))
+
+      // Download link
+      const link = document.createElement('a')
+      Object.assign(link, {
+        href: recordedUrl,
+        download: `recording_${Date.now()}.wav`,
+        textContent: 'Download recording',
+      })
+      
+      // Add elements to container
+      container.appendChild(button)
+      container.appendChild(link)
+      container.appendChild(infoDiv)
+      
+      // Add separator
+      const hr = document.createElement('hr')
+      hr.style.margin = '10px 0'
+      hr.style.border = 'none'
+      hr.style.borderTop = '1px solid #eee'
+      container.appendChild(hr)
+    }
+
+    const updateVolumeDisplay = (volumePercent) => {
+      const volumeValue = document.querySelector('#volumeValue')
+      const volumeFill = document.querySelector('#volumeFill')
+      
+      volumeValue.textContent = Math.round(volumePercent)
+      
+      // Update volume bar
+      volumeFill.style.width = `${Math.min(volumePercent, 100)}%`
+      
+      // Color coding
+      if (volumePercent > startThreshold) {
+        volumeFill.style.background = '#00aa00' // Above start threshold
+      } else if (volumePercent > stopThreshold) {
+        volumeFill.style.background = '#ffaa00' // Between thresholds
+      } else {
+        volumeFill.style.background = '#4a6fa5' // Below stop threshold
+      }
+    }
+
+    const updateTimingDisplay = () => {
+      document.querySelector('#aboveStartTime').textContent = `${Math.min(aboveStartTime, startDuration)}ms`
+      document.querySelector('#belowStopTime').textContent = `${Math.min(belowStopTime, stopDuration)}ms`
+    }
+
+    const updateRecordingStatus = () => {
+      document.querySelector('#recordingStatus').textContent = isRecordingActive ? 'Yes' : 'No'
+      document.querySelector('#recordingStatus').style.color = isRecordingActive ? '#00aa00' : '#ff4444'
+    }
+
+    const updateThresholdLines = () => {
+      const startLine = document.querySelector('#startThresholdLine')
+      const stopLine = document.querySelector('#stopThresholdLine')
+      
+      if (startLine) {
+        startLine.style.left = `${startThreshold}%`
+      }
+      
+      if (stopLine) {
+        stopLine.style.left = `${stopThreshold}%`
+      }
+      
+      // Update labels
+      document.querySelectorAll('span[style*="00aa00"]')[1].textContent = 
+        `Start Threshold (${startThreshold}%)`
+      document.querySelectorAll('span[style*="ff4444"]')[1].textContent = 
+        `Stop Threshold (${stopThreshold}%)`
+    }
+
+    const pauseButton = document.querySelector('#pause')
+    pauseButton.onclick = () => {
+      if (record.isPaused()) {
+        record.resumeRecording()
+        pauseButton.textContent = 'Pause'
+        return
+      }
+
+      record.pauseRecording()
+      pauseButton.textContent = 'Resume'
+    }
+
+    const micSelect = document.querySelector('#mic-select')
+    RecordPlugin.getAvailableAudioDevices().then((devices) => {
+      devices.forEach((device) => {
+        const option = document.createElement('option')
+        option.value = device.deviceId
+        option.text = device.label || device.deviceId
+        micSelect.appendChild(option)
+      })
+    })
+    
+    const recButton = document.querySelector('#record')
+    recButton.onclick = async () => {
+      if (isListening) {
+        // Stop everything
+        isListening = false
+        isRecordingActive = false
+        if (record.isRecording() || record.isPaused()) {
+          record.stopRecording()
+        }
+        if (audioContext) {
+          audioContext.close()
+          audioContext = null
+        }
+        recButton.textContent = 'Start Listening'
+        pauseButton.style.display = 'none'
+        document.querySelector('#status').textContent = 'Idle'
+        updateRecordingStatus()
+        aboveStartTime = 0
+        belowStopTime = 0
+        volumeHistory = []
+        voiceDetectionTimestamp = 0
+        recordingStartTimestamp = 0
+        updateTimingDisplay()
+        updateVolumeDisplay(0)
+      } else {
+        // Start listening
+        try {
+          const deviceId = micSelect.value
+          const constraints = deviceId ? { deviceId: { exact: deviceId } } : true
+          const stream = await navigator.mediaDevices.getUserMedia({ 
+            audio: constraints,
+            video: false 
+          })
+          
+          // Reset timestamps
+          voiceDetectionTimestamp = 0
+          recordingStartTimestamp = 0
+          
+          // Initialize WaveSurfer recording
+          isListening = true
+          recButton.disabled = true
+          
+          record.startRecording({ deviceId }).then(() => {
+            recButton.textContent = 'Stop Listening'
+            recButton.disabled = false
+            pauseButton.style.display = 'inline'
+            document.querySelector('#status').textContent = 'Listening...'
+            volumeHistory = []
+            aboveStartTime = 0
+            belowStopTime = 0
+            lastUpdateTime = Date.now()
+            updateTimingDisplay()
+            updateRecordingStatus()
+            
+            // Start audio analysis
+            initAudioAnalysis(stream)
+            
+          }).catch((error) => {
+            console.error('Error starting record plugin:', error)
+            isListening = false
+            recButton.disabled = false
+            document.querySelector('#status').textContent = 'Error'
+          })
+          
+        } catch (error) {
+          console.error('Error getting microphone:', error)
+          alert('Cannot access microphone. Please check permissions.')
+          recButton.disabled = false
+        }
+      }
+    }
+
+    // Settings controls
+    document.querySelector('#startThreshold').oninput = (e) => {
+      startThreshold = parseInt(e.target.value)
+      document.querySelector('#startThresholdValue').textContent = startThreshold
+      updateThresholdLines()
+    }
+
+    document.querySelector('#stopThreshold').oninput = (e) => {
+      stopThreshold = parseInt(e.target.value)
+      document.querySelector('#stopThresholdValue').textContent = stopThreshold
+      updateThresholdLines()
+    }
+
+    document.querySelector('#startDuration').oninput = (e) => {
+      startDuration = parseInt(e.target.value)
+      document.querySelector('#startDurationValue').textContent = startDuration
+      document.querySelector('#startDurationDisplay').textContent = `${startDuration}ms`
+    }
+
+    document.querySelector('#stopDuration').oninput = (e) => {
+      stopDuration = parseInt(e.target.value)
+      document.querySelector('#stopDurationValue').textContent = stopDuration
+      document.querySelector('#stopDurationDisplay').textContent = `${stopDuration}ms`
+    }
+
+    document.querySelector('#scrollingWaveform').onclick = (e) => {
+      scrollingWaveform = e.target.checked
+      if (continuousWaveform && scrollingWaveform) {
+        continuousWaveform = false
+        document.querySelector('#continuousWaveform').checked = false
+      }
+      createWaveSurfer()
+    }
+
+    document.querySelector('#continuousWaveform').onclick = (e) => {
+      continuousWaveform = e.target.checked
+      if (continuousWaveform && scrollingWaveform) {
+        scrollingWaveform = false
+        document.querySelector('#scrollingWaveform').checked = false
+      }
+      createWaveSurfer()
+    }
+
+    // Initialize
+    createWaveSurfer()
+    updateThresholdLines()
+    document.querySelector('#startDurationDisplay').textContent = `${startDuration}ms`
+    document.querySelector('#stopDurationDisplay').textContent = `${stopDuration}ms`
+  </script>
+</body>
+</html>

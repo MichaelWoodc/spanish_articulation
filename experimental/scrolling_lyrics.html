@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wavesurfer + Overlay Lyrics</title>
+
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #111; color: #fff; }
+
+    #waveContainer {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Bars waveform */
+    #waveform {
+      width: 100%;
+      height: 200px;
+    }
+
+    /* Overlay lyric */
+    #lyricOverlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.85);
+      pointer-events: none;
+      width: 90%;
+    }
+
+    /* Full lyrics list */
+    #fullLyrics {
+      margin-top: 40px;
+      display: none;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .line {
+      opacity: 0.5;
+    }
+
+    .line.active {
+      opacity: 1;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #444;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>WaveSurfer with Overlay Lyrics</h1>
+
+<div id="waveContainer">
+  <div id="waveform"></div>
+  <div id="lyricOverlay"></div>
+</div>
+
+<button id="playPause">Play / Pause</button>
+<button id="toggleFullLyrics">Show Full Lyrics</button>
+
+<div id="fullLyrics"></div>
+
+<script type="module">
+  import WaveSurfer from 'https://unpkg.com/wavesurfer.js/dist/wavesurfer.esm.js'
+
+  // Create WaveSurfer with bar mode
+  const wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'rgb(200, 0, 200)',
+    progressColor: 'rgb(100, 0, 100)',
+    url: 'song.ogg',
+
+    barWidth: 2,
+    barGap: 1,
+    barRadius: 2,
+  })
+
+  document.getElementById('playPause').onclick = () => wavesurfer.playPause()
+
+  document.getElementById('toggleFullLyrics').onclick = () => {
+    const full = document.getElementById('fullLyrics')
+    const btn = document.getElementById('toggleFullLyrics')
+    const visible = full.style.display === 'block'
+    full.style.display = visible ? 'none' : 'block'
+    btn.textContent = visible ? "Show Full Lyrics" : "Hide Full Lyrics"
+  }
+
+  // Load lyrics.json
+  async function loadLyrics() {
+    const response = await fetch('lyrics.json')
+    const data = await response.json()
+
+    const raw = data.lyrics
+    const parsed = parseLyrics(raw)
+
+    // Build the full lyrics list
+    const fullContainer = document.getElementById('fullLyrics')
+    parsed.forEach(l => {
+      const div = document.createElement('div')
+      div.className = 'line'
+      div.dataset.time = l.time
+      div.textContent = l.text
+      fullContainer.appendChild(div)
+    })
+
+    // Overlay container
+    const overlay = document.getElementById('lyricOverlay')
+
+    // Sync overlay + full lyrics
+    wavesurfer.on('audioprocess', currentTime => {
+      const lines = document.querySelectorAll('#fullLyrics .line')
+      let activeText = ''
+
+      lines.forEach(line => {
+        const start = parseFloat(line.dataset.time)
+        const next = line.nextElementSibling
+        const end = next ? parseFloat(next.dataset.time) : Infinity
+        const isActive = currentTime >= start && currentTime < end
+
+        line.classList.toggle('active', isActive)
+        if (isActive) {
+          activeText = line.textContent
+        }
+      })
+
+      // Update center overlay
+      overlay.textContent = activeText
+    })
+  }
+
+  function parseLyrics(raw) {
+    const lines = raw.split(/\n/).filter(Boolean)
+    const parsed = []
+    const timeRegex = /\[(\d+):(\d+\.\d+)\]/g
+
+    for (const line of lines) {
+      let text = line.replace(timeRegex, '').trim()
+      let match
+
+      // Handle multiple timestamps
+      while ((match = timeRegex.exec(line)) !== null) {
+        const minutes = parseInt(match[1], 10)
+        const seconds = parseFloat(match[2])
+        const time = minutes * 60 + seconds
+        parsed.push({ time, text })
+      }
+    }
+
+    return parsed.sort((a, b) => a.time - b.time)
+  }
+
+  wavesurfer.once('interaction', () => wavesurfer.play())
+  loadLyrics()
+</script>
+
+</body>
+</html>
